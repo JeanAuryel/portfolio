@@ -7,6 +7,7 @@ import ContactView from '@/views/ContactView.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: HomeView },
+  { path: '/portfolio', name: 'Home', component: HomeView },
   { path: '/about', name: 'AboutMe', component: AboutMeView },
   { path: '/projects', name: 'Projects', component: ProjectsView },
   { path: '/skills', name: 'Skills', component: SkillsView },
