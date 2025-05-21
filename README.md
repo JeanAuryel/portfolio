@@ -1,29 +1,28 @@
-# Portfolio
+# 🌐 Portfolio – Jean-Auryel Akinotcho
 
-This template should help get you started developing with Vue 3 in Vite.
+Mon portfolio personnel développé avec **Vue.js 3** et **TailwindCSS**, présentant mon parcours, mes projets, et mes compétences.
 
-## Recommended IDE Setup
+> 🔗 En ligne ici : [https://jeanauryel.github.io/portfolio/](https://jeanauryel.github.io/portfolio/)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🎯 Sections du site
+- Accueil
+- À propos
+- Études & parcours
+- Projets (E4, E5, personnels)
+- Contact
 
-## Customize configuration
+## 🛠️ Stack
+- Vue.js 3
+- Tailwind CSS
+- Vite
+- TypeScript
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 💡 Fonctionnalités
+- Interface responsive (PC, mobile, tablette)
+- Cartes de projets interactives (hover, slide-in, fade-in)
+- Navigation fluide et épurée
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## 🧑‍💻 Auteur
+Jean-Auryel Akinotcho  
+🔗 [LinkedIn](https://www.linkedin.com/in/jean-auryel-isma%C3%ABl-akinotcho-a60a0661)  
+📧 jeanauryel.akinotcho@gmail.com
