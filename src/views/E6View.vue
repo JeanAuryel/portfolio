@@ -107,14 +107,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="flex-grow pt-20 pb-16 relative">
+  <main class="flex-grow pt-36 pb-16 relative">
     <div class="container mx-auto px-4">
       <!-- Header -->
       <div 
         class="text-center mb-12 transition-opacity duration-700"
         :class="{ 'opacity-100': isLoaded, 'opacity-0': !isLoaded }"
       >
-        <h1 class="text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+        <h1 class="text-5xl font-bold mb-6 text-gray-900 dark:text-black">
           Mes Réalisations - E6
         </h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">

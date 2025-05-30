@@ -26,7 +26,7 @@ const projects = ref<Project[]>([
     detailedDescription: 'Organizheur est une application web complète permettant aux utilisateurs de gérer leurs tâches, leurs événements et leur planning de manière efficace. L\'application offre une interface intuitive avec un système de notifications, un calendrier intégré et des fonctionnalités de collaboration pour les équipes.',
     technologies: ['Vue.js 3.5', 'TypeScript', 'Tailwind CSS', 'PHP', 'MySQL'],
     image: 'https://picsum.photos/400/300?random=1',
-    date: 'Janvier 2024'
+    date: 'Octobre à Novembre 2024'
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const projects = ref<Project[]>([
     detailedDescription: 'Deliver\'easy est une plateforme de livraison qui connecte les restaurants locaux avec les clients. L\'application propose un système de commande intuitive, un suivi en temps réel, et une interface d\'administration complète pour les restaurateurs.',
     technologies: ['Vue.js 3', 'Node.js', 'Express', 'MongoDB', 'Socket.io'],
     image: 'https://picsum.photos/400/300?random=2',
-    date: 'Mars 2024'
+    date: 'Novembre à Décembre 2024'
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const projects = ref<Project[]>([
     detailedDescription: 'NurseCare est une solution digitale dédiée aux infirmières libérales pour la gestion de leur patientèle. Elle inclut un planning intelligent, un système de dossier patient sécurisé, et des outils de communication avec les médecins.',
     technologies: ['React', 'TypeScript', 'Express', 'PostgreSQL', 'Docker'],
     image: 'https://picsum.photos/400/300?random=3',
-    date: 'Mai 2024'
+    date: 'Décembre 2024 à Janvier 2025'
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ const projects = ref<Project[]>([
     detailedDescription: 'CaristSI est un système d\'information complet pour la gestion d\'entrepôts et de stocks. Il permet aux caristes de gérer efficacement les mouvements de marchandises, optimiser les espaces de stockage et générer des rapports détaillés.',
     technologies: ['Laravel', 'Vue.js', 'MySQL', 'Bootstrap', 'Chart.js'],
     image: 'https://picsum.photos/400/300?random=4',
-    date: 'Septembre 2023'
+    date: 'Février à Mars 2025'
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ const projects = ref<Project[]>([
     detailedDescription: 'Application mobile compagnon de CaristSI, permettant aux caristes de scanner les codes-barres, mettre à jour les stocks en temps réel, et recevoir des notifications push pour les nouvelles tâches.',
     technologies: ['React Native', 'Expo', 'Redux', 'Firebase'],
     image: 'https://picsum.photos/400/300?random=5',
-    date: 'Octobre 2023'
+    date: 'Mars à Avril 2023'
   },
   {
     id: 6,
@@ -76,7 +76,7 @@ const projects = ref<Project[]>([
     detailedDescription: 'Arka est une plateforme d\'apprentissage en ligne développée dans le cadre de ma formation. Elle propose des cours interactifs, des quiz, un système de progression et des certificats de completion.',
     technologies: ['Vue.js 3', 'Nuxt.js', 'Supabase', 'Tailwind CSS'],
     image: 'https://picsum.photos/400/300?random=6',
-    date: 'Décembre 2023'
+    date: 'Mai 2025'
   },
   {
     id: 7,
@@ -86,7 +86,7 @@ const projects = ref<Project[]>([
     detailedDescription: 'Version mobile d\'Arka permettant l\'apprentissage sur tous supports. Includes mode hors-ligne, synchronisation automatique, et interface adaptative.',
     technologies: ['Flutter', 'Dart', 'SQLite', 'Firebase'],
     image: 'https://picsum.photos/400/300?random=7',
-    date: 'Janvier 2024'
+    date: 'Mai à Juin 2025'
   },
   // Projet réalisé en entreprise
   {
@@ -102,26 +102,6 @@ const projects = ref<Project[]>([
   // Projets personnels
   {
     id: 9,
-    name: 'Arka (Personnel)',
-    category: 'personnel',
-    description: 'Plateforme e-learning personnelle',
-    detailedDescription: 'Version personnelle et améliorée d\'Arka, avec des fonctionnalités avancées comme l\'intelligence artificielle pour la recommandation de contenu, un système de mentoring, et une marketplace de cours.',
-    technologies: ['Vue.js 3.5', 'Tailwind CSS 4', 'Supabase', 'OpenAI API'],
-    image: 'https://picsum.photos/400/300?random=9',
-    date: 'Mars 2024 - En cours'
-  },
-  {
-    id: 10,
-    name: 'Arka Mobile (Personnel)',
-    category: 'personnel',
-    description: 'App mobile Arka améliorée',
-    detailedDescription: 'Version mobile avancée d\'Arka avec réalité augmentée pour l\'apprentissage immersif, reconnaissance vocale pour les commandes, et synchronisation multi-appareils.',
-    technologies: ['Flutter', 'Dart', 'ARCore', 'Speech Recognition', 'Firebase'],
-    image: 'https://picsum.photos/400/300?random=10',
-    date: 'Avril 2024 - En cours'
-  },
-  {
-    id: 11,
     name: 'KerHope',
     category: 'personnel',
     description: 'Application d\'aide humanitaire',
@@ -150,22 +130,22 @@ function toggleCard(id: number) {
   }
 }
 
-// Ouvrir le fichier Excel
-function openExcelFile() {
-  window.open('/documents/Tableau_E5_Projets.xlsx', '_blank');
+// Ouvrir le fichier PDF
+function openPdfFile() {
+  window.open('/src/assets/documents/E4- Tableau de synthèse - Epreuve E5 - BTS SIO 2025.pdf', '_blank');
 }
 
-// Télécharger le fichier Excel
-function downloadExcelFile() {
+// Télécharger le fichier PDF
+function downloadPdfFile() {
   const link = document.createElement('a');
-  link.href = '/documents/Tableau_E5_Projets.xlsx';
-  link.download = 'Tableau_E5_Projets.xlsx';
+  link.href = '/documents/E4- Tableau de synthèse - Epreuve E5 - BTS SIO 2025.pdf';
+  link.download = 'Tableau de synthèse - Epreuve E5.pdf';
   link.click();
 }
 </script>
 
 <template>
-  <main class="flex-grow pt-20 pb-16 relative">
+  <main class="flex-grow pt-32 pb-16 relative bg-adaptive-primary">
     <!-- Background blur overlay when a card is active -->
     <div 
       v-if="activeCardId !== null"
@@ -174,41 +154,41 @@ function downloadExcelFile() {
     ></div>
     
     <div class="container mx-auto px-4">
-      <!-- Header avec bouton Excel -->
+      <!-- Header avec bouton PDF -->
       <div class="flex justify-between items-center mb-12">
         <div>
-          <h1 class="text-5xl font-bold mb-4">Mes Réalisations - E5</h1>
-          <p class="text-xl text-gray-600 dark:text-gray-300">
+          <h1 class="text-5xl font-bold mb-4 text-adaptive">Mes Réalisations - E5</h1>
+          <p class="text-xl text-adaptive-secondary">
             Découvrez les projets que j'ai réalisés en formation, en entreprise et personnellement
           </p>
         </div>
         
-        <!-- Bouton Excel -->
+        <!-- Bouton PDF -->
         <div class="flex flex-col sm:flex-row gap-3">
           <button 
-            @click="openExcelFile"
-            class="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors shadow-lg"
+            @click="openPdfFile"
+            class="flex items-center px-4 py-2 bg-skill-burgundy text-skill-burgundy-light rounded-lg hover:bg-skill-burgundy-dark hover:text-skill-burgundy-light transition-colors shadow-lg"
           >
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 2V5h-4v10h4V5zM4 5h4v10H4V5z"/>
+              <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h12v8H4V6zm2 2v4h2V8H6zm4 0v1h2V8h-2zm0 2v2h2v-2h-2z"/>
             </svg>
-            Ouvrir Excel
+            Ouvrir PDF
           </button>
           <button 
-            @click="downloadExcelFile"
-            class="flex items-center px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors shadow-lg"
+            @click="downloadPdfFile"
+            class="btn-walnut"
           >
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18v2h20v-2H0z"/>
             </svg>
-            Télécharger
+            Télécharger PDF
           </button>
         </div>
       </div>
       
       <!-- Projets en formation -->
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 text-primary-600 dark:text-primary-400">
+        <h2 class="text-3xl font-bold mb-8 text-skill-terra">
           🎓 Projets réalisés en formation
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -228,28 +208,28 @@ function downloadExcelFile() {
                 <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
                   <img :src="project.image" :alt="project.name" class="w-full h-48 object-cover">
                 </div>
-                <h3 class="text-xl font-bold mb-2">{{ project.name }}</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">{{ project.description }}</p>
-                <div class="mt-4 text-xs text-gray-500 dark:text-gray-400">{{ project.date }}</div>
+                <h3 class="text-xl font-bold mb-2 text-adaptive">{{ project.name }}</h3>
+                <p class="text-adaptive-secondary text-sm">{{ project.description }}</p>
+                <div class="mt-4 text-xs text-adaptive-secondary opacity-75">{{ project.date }}</div>
               </div>
               
               <!-- Face arrière -->
               <div class="project-card-back">
                 <div class="flex h-full">
                   <div class="flex-1 pr-4">
-                    <h3 class="text-xl font-bold mb-4">{{ project.name }}</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">{{ project.detailedDescription }}</p>
-                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-auto">{{ project.date }}</div>
+                    <h3 class="text-xl font-bold mb-4 text-adaptive">{{ project.name }}</h3>
+                    <p class="text-adaptive-secondary text-sm mb-4">{{ project.detailedDescription }}</p>
+                    <div class="text-xs text-adaptive-secondary opacity-75 mt-auto">{{ project.date }}</div>
                   </div>
                   
                   <!-- Technologies -->
-                  <div class="w-32 border-l border-gray-200 dark:border-gray-700 pl-4">
-                    <h4 class="font-semibold mb-3 text-sm">Technologies</h4>
+                  <div class="w-32 border-l border-adaptive pl-4">
+                    <h4 class="font-semibold mb-3 text-sm text-adaptive">Technologies</h4>
                     <div class="space-y-2">
                       <div 
                         v-for="tech in project.technologies" 
                         :key="tech"
-                        class="text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 px-2 py-1 rounded-full"
+                        class="text-xs bg-skill-terra-light text-skill-terra-dark px-2 py-1 rounded-full"
                       >
                         {{ tech }}
                       </div>
@@ -264,7 +244,7 @@ function downloadExcelFile() {
       
       <!-- Projets en entreprise -->
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 text-green-600 dark:text-green-400">
+        <h2 class="text-3xl font-bold mb-8 text-skill-olive">
           🏢 Projets réalisés en entreprise
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -284,28 +264,28 @@ function downloadExcelFile() {
                 <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
                   <img :src="project.image" :alt="project.name" class="w-full h-48 object-cover">
                 </div>
-                <h3 class="text-xl font-bold mb-2">{{ project.name }}</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">{{ project.description }}</p>
-                <div class="mt-4 text-xs text-gray-500 dark:text-gray-400">{{ project.date }}</div>
+                <h3 class="text-xl font-bold mb-2 text-adaptive">{{ project.name }}</h3>
+                <p class="text-adaptive-secondary text-sm">{{ project.description }}</p>
+                <div class="mt-4 text-xs text-adaptive-secondary opacity-75">{{ project.date }}</div>
               </div>
               
               <!-- Face arrière -->
               <div class="project-card-back">
                 <div class="flex h-full">
                   <div class="flex-1 pr-4">
-                    <h3 class="text-xl font-bold mb-4">{{ project.name }}</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">{{ project.detailedDescription }}</p>
-                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-auto">{{ project.date }}</div>
+                    <h3 class="text-xl font-bold mb-4 text-adaptive">{{ project.name }}</h3>
+                    <p class="text-adaptive-secondary text-sm mb-4">{{ project.detailedDescription }}</p>
+                    <div class="text-xs text-adaptive-secondary opacity-75 mt-auto">{{ project.date }}</div>
                   </div>
                   
                   <!-- Technologies -->
-                  <div class="w-32 border-l border-gray-200 dark:border-gray-700 pl-4">
-                    <h4 class="font-semibold mb-3 text-sm">Technologies</h4>
+                  <div class="w-32 border-l border-adaptive pl-4">
+                    <h4 class="font-semibold mb-3 text-sm text-adaptive">Technologies</h4>
                     <div class="space-y-2">
                       <div 
                         v-for="tech in project.technologies" 
                         :key="tech"
-                        class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full"
+                        class="text-xs bg-skill-olive-light text-skill-olive-dark px-2 py-1 rounded-full"
                       >
                         {{ tech }}
                       </div>
@@ -320,7 +300,7 @@ function downloadExcelFile() {
       
       <!-- Projets personnels -->
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 text-purple-600 dark:text-purple-400">
+        <h2 class="text-3xl font-bold mb-8 text-skill-burgundy">
           🚀 Projets personnels
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -340,28 +320,28 @@ function downloadExcelFile() {
                 <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
                   <img :src="project.image" :alt="project.name" class="w-full h-48 object-cover">
                 </div>
-                <h3 class="text-xl font-bold mb-2">{{ project.name }}</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">{{ project.description }}</p>
-                <div class="mt-4 text-xs text-gray-500 dark:text-gray-400">{{ project.date }}</div>
+                <h3 class="text-xl font-bold mb-2 text-adaptive">{{ project.name }}</h3>
+                <p class="text-adaptive-secondary text-sm">{{ project.description }}</p>
+                <div class="mt-4 text-xs text-adaptive-secondary opacity-75">{{ project.date }}</div>
               </div>
               
               <!-- Face arrière -->
               <div class="project-card-back">
                 <div class="flex h-full">
                   <div class="flex-1 pr-4">
-                    <h3 class="text-xl font-bold mb-4">{{ project.name }}</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">{{ project.detailedDescription }}</p>
-                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-auto">{{ project.date }}</div>
+                    <h3 class="text-xl font-bold mb-4 text-adaptive">{{ project.name }}</h3>
+                    <p class="text-adaptive-secondary text-sm mb-4">{{ project.detailedDescription }}</p>
+                    <div class="text-xs text-adaptive-secondary opacity-75 mt-auto">{{ project.date }}</div>
                   </div>
                   
                   <!-- Technologies -->
-                  <div class="w-32 border-l border-gray-200 dark:border-gray-700 pl-4">
-                    <h4 class="font-semibold mb-3 text-sm">Technologies</h4>
+                  <div class="w-32 border-l border-adaptive pl-4">
+                    <h4 class="font-semibold mb-3 text-sm text-adaptive">Technologies</h4>
                     <div class="space-y-2">
                       <div 
                         v-for="tech in project.technologies" 
                         :key="tech"
-                        class="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full"
+                        class="text-xs bg-skill-burgundy-light text-skill-burgundy-dark px-2 py-1 rounded-full"
                       >
                         {{ tech }}
                       </div>
@@ -378,7 +358,7 @@ function downloadExcelFile() {
 </template>
 
 <style scoped>
-/* Cartes de projet */
+/* Cartes de projet - Version corrigée */
 .project-card {
   height: 400px;
   cursor: pointer;
@@ -386,7 +366,7 @@ function downloadExcelFile() {
   transition: all 0.3s ease;
 }
 
-.project-card:hover {
+.project-card:hover:not(.active) {
   transform: translateY(-5px);
 }
 
@@ -408,6 +388,7 @@ function downloadExcelFile() {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
+  will-change: transform;
 }
 
 .project-card.flip .project-card-inner {
@@ -420,14 +401,21 @@ function downloadExcelFile() {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
   padding: 24px;
   border-radius: 12px;
-  background-color: oklch(var(--color-white));
+  background-color: oklch(var(--color-cream-50));
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Masquer complètement la face non visible */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-:root.dark .project-card-front,
-:root.dark .project-card-back {
+.dark .project-card-front,
+.dark .project-card-back {
   background-color: oklch(var(--color-gray-800));
 }
 
@@ -437,9 +425,58 @@ function downloadExcelFile() {
   flex-direction: column;
 }
 
+/* Quand la carte n'est pas flippée, cacher la face arrière */
+.project-card:not(.flip) .project-card-back {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Quand la carte est flippée, cacher la face avant */
+.project-card.flip .project-card-front {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* S'assurer que seule la face visible est interactive */
+.project-card.flip .project-card-back {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.project-card:not(.flip) .project-card-front {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .project-card.active .project-card-front,
 .project-card.active .project-card-back {
   padding: 32px;
+}
+
+/* Améliorer la transition pour éviter les artefacts visuels */
+.project-card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Améliorer la gestion du z-index */
+.project-card:not(.active) {
+  z-index: 1;
+}
+
+.project-card.active {
+  z-index: 40;
 }
 
 /* Responsive adjustments */
@@ -460,11 +497,11 @@ function downloadExcelFile() {
     padding-left: 0;
     padding-top: 16px;
     border-left: none;
-    border-top: 1px solid oklch(var(--color-gray-200));
+    border-top: 1px solid oklch(var(--color-cream-300));
   }
   
-  :root.dark .project-card.active .project-card-back .w-32 {
-    border-top-color: oklch(var(--color-gray-700));
+  .dark .project-card.active .project-card-back .w-32 {
+    border-top-color: oklch(var(--color-gray-600));
   }
   
   .project-card.active .project-card-back .w-32 .space-y-2 {
@@ -480,9 +517,20 @@ function downloadExcelFile() {
   animation-delay: calc(var(--index) * 0.1s);
 }
 
+/* Animation fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 </style>
-

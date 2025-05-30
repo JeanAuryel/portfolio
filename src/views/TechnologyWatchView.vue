@@ -116,7 +116,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="flex-grow pt-20 pb-16 relative">
+  <main class="flex-grow pt-36 pb-16 relative">
     <!-- Background blur overlay when a card is active -->
     <div 
       v-if="activeCardId !== null"
@@ -130,7 +130,7 @@ onMounted(() => {
         class="text-center mb-12 transition-opacity duration-700"
         :class="{ 'opacity-100': isLoaded, 'opacity-0': !isLoaded }"
       >
-        <h1 class="text-5xl font-bold mb-6 text-gray-900 dark:text-white">Ma Veille Technologique</h1>
+        <h1 class="text-5xl font-bold mb-6 text-gray-900 dark:text-black">Ma Veille Technologique</h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Découvrez les outils et ressources que j'utilise quotidiennement pour rester à la pointe 
           des dernières tendances technologiques et des innovations dans le développement web.

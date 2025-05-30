@@ -1,13 +1,14 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 
-// Importer les composants de vues (chargement paresseux pour les performances)
-const HomeView = () => import('@/views/HomeView.vue');
-const AboutMeView = () => import('@/views/AboutMeView.vue');
-const E5View = () => import('@/views/E5View.vue');
-const E6View = () => import('@/views/E6View.vue');
-const TechnologyWatchView = () => import('@/views/TechnologyWatchView.vue');
-const ContactView = () => import('@/views/ContactView.vue');
-const NotFoundView = () => import('@/views/NotFoundView.vue');
+// Import des vues
+import HomeView from '../views/HomeView.vue'
+import AboutMeView from '../views/AboutMeView.vue'
+import E5View from '../views/E5View.vue'
+import E6View from '../views/E6View.vue'
+import TechnologyWatchView from '../views/TechnologyWatchView.vue'
+import ContactView from '../views/ContactView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -15,15 +16,21 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: HomeView,
     meta: {
-      title: 'Accueil - Jean-Auryel Akinotcho'
+      title: 'Accueil - Portfolio Jean-Auryel',
+      description: 'Bienvenue sur mon portfolio',
+      requiresAuth: false,
+      showLoading: false // Pas de loading car déjà fait au démarrage
     }
   },
   {
     path: '/about',
-    name: 'AboutMe',
+    name: 'About',
     component: AboutMeView,
     meta: {
-      title: 'À Propos de Moi - Jean-Auryel Akinotcho'
+      title: 'À propos - Portfolio Jean-Auryel',
+      description: 'En savoir plus sur mon parcours',
+      showLoading: true,
+      loadingText: 'Chargement de mon profil...'
     }
   },
   {
@@ -31,7 +38,10 @@ const routes: Array<RouteRecordRaw> = [
     name: 'E5',
     component: E5View,
     meta: {
-      title: 'E5 - Réalisations - Jean-Auryel Akinotcho'
+      title: 'E5 - Portfolio Jean-Auryel',
+      description: 'Projets et compétences E5',
+      showLoading: true,
+      loadingText: 'Chargement des projets E5...'
     }
   },
   {
@@ -39,15 +49,22 @@ const routes: Array<RouteRecordRaw> = [
     name: 'E6',
     component: E6View,
     meta: {
-      title: 'E6 - Documentation - Jean-Auryel Akinotcho'
+      title: 'E6 - Portfolio Jean-Auryel',
+      description: 'Projets et compétences E6',
+      showLoading: true,
+      loadingText: 'Chargement des projets E6...'
     }
   },
   {
+    // CORRECTION : Utiliser /tech-watch pour correspondre à votre navigation
     path: '/tech-watch',
     name: 'TechnologyWatch',
     component: TechnologyWatchView,
     meta: {
-      title: 'Veille Technologique - Jean-Auryel Akinotcho'
+      title: 'Veille Technologique - Portfolio Jean-Auryel',
+      description: 'Ma veille technologique et mes outils de recherche',
+      showLoading: true,
+      loadingText: 'Chargement de la veille technologique...'
     }
   },
   {
@@ -55,54 +72,89 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Contact',
     component: ContactView,
     meta: {
-      title: 'Contact - Jean-Auryel Akinotcho'
+      title: 'Contact - Portfolio Jean-Auryel',
+      description: 'Me contacter',
+      showLoading: false // Contact simple, pas besoin de loading
     }
   },
-  // Route pour les pages non trouvées
+  {
+    // Route de redirection pour l'ancienne URL (si nécessaire)
+    path: '/technology-watch',
+    redirect: '/tech-watch'
+  },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: NotFoundView,
     meta: {
-      title: 'Page non trouvée - Jean-Auryel Akinotcho'
+      title: 'Page non trouvée - Portfolio Jean-Auryel',
+      showLoading: false
     }
   }
-];
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  // Comportement de défilement
   scrollBehavior(to, from, savedPosition) {
-    // Revenir à la position sauvegardée si disponible
     if (savedPosition) {
-      return savedPosition;
+      return savedPosition
     }
-    
-    // Comportement personnalisé pour les ancres
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-        top: 80 // Tenir compte de la barre de navigation fixe
-      };
-    }
-    
-    // Sinon, revenir en haut de la page
-    return { top: 0, behavior: 'smooth' };
+    return { top: 0 }
   }
-});
+})
 
-// Mettre à jour le titre de la page
-router.beforeEach((to, from, next) => {
-  // Mettre à jour le titre de la page
-  if (to.meta.title) {
-    document.title = to.meta.title as string;
-  } else {
-    document.title = 'Jean-Auryel Akinotcho - Portfolio';
+// Guards de navigation avec gestion du loading
+router.beforeEach(async (to, from, next) => {
+  // Démarrer le loading si nécessaire (si vous utilisez useAppLoading)
+  if (to.meta.showLoading) {
+    // startPageLoading() - décommentez si vous utilisez le composable
   }
   
-  next();
-});
+  // Mettre à jour le titre de la page
+  if (to.meta.title) {
+    document.title = to.meta.title as string
+  }
+  
+  // Mettre à jour la meta description
+  if (to.meta.description) {
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', to.meta.description as string)
+    }
+  }
 
-export default router;
+  // Simuler un délai de chargement pour les pages avec showLoading
+  if (to.meta.showLoading && from.name !== undefined) {
+    // Petit délai pour montrer le loading (ajustez selon vos besoins)
+    await new Promise(resolve => setTimeout(resolve, 500))
+  }
+  
+  next()
+})
+
+router.afterEach((to, from) => {
+  // Terminer le loading (si vous utilisez useAppLoading)
+  if (to.meta.showLoading) {
+    // finishPageLoading() - décommentez si vous utilisez le composable
+  }
+
+  // Analytics (si vous en utilisez)
+  // gtag('config', 'GA_MEASUREMENT_ID', {
+  //   page_title: to.meta.title,
+  //   page_location: to.fullPath
+  // })
+})
+
+// Types pour TypeScript
+declare module 'vue-router' {
+  interface RouteMeta {
+    title?: string
+    description?: string
+    requiresAuth?: boolean
+    showLoading?: boolean
+    loadingText?: string
+  }
+}
+
+export default router

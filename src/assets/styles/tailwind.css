@@ -1,154 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lobster&display=swap');
 @import "tailwindcss";
 
-/* Import des polices Google */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lobster&display=swap');
-
-/* Configuration des couleurs personnalisées */
+/* ========== CONFIGURATION DES COULEURS - TAILWIND CSS V4 ========== */
 @theme {
-  /* Couleurs primary - Mode clair (blanc/noir dominant) */
-  --color-primary-50: oklch(0.98 0.003 0);
-  --color-primary-100: oklch(0.95 0.005 0);
-  --color-primary-200: oklch(0.9 0.01 0);
-  --color-primary-300: oklch(0.8 0.02 0);
-  --color-primary-400: oklch(0.7 0.03 0);
-  --color-primary-500: oklch(0.15 0.02 0); /* Noir principal pour le mode clair */
-  --color-primary-600: oklch(0.12 0.02 0);
-  --color-primary-700: oklch(0.09 0.02 0);
-  --color-primary-800: oklch(0.06 0.02 0);
-  --color-primary-900: oklch(0.03 0.02 0);
-  --color-primary-950: oklch(0.01 0.01 0);
-  
-  /* Couleurs de base essentielles */
-  --color-white: oklch(1 0 0);
-  --color-black: oklch(0 0 0);
-  
-  /* Couleurs grises optimisées pour le mode clair */
-  --color-gray-50: oklch(0.984 0.003 0);
-  --color-gray-100: oklch(0.968 0.007 0);
-  --color-gray-200: oklch(0.929 0.013 0);
-  --color-gray-300: oklch(0.869 0.022 0);
-  --color-gray-400: oklch(0.704 0.04 0);
-  --color-gray-500: oklch(0.554 0.046 0);
-  --color-gray-600: oklch(0.446 0.043 0);
-  --color-gray-700: oklch(0.372 0.044 0);
-  --color-gray-800: oklch(0.279 0.041 0);
-  --color-gray-900: oklch(0.208 0.042 0);
-  --color-gray-950: oklch(0.129 0.042 0);
-  
-  /* Couleurs d'accent (gardées colorées pour les occasions spéciales) */
-  --color-blue-50: oklch(0.984 0.054 244.975);
-  --color-blue-100: oklch(0.957 0.063 244.975);
-  --color-blue-400: oklch(0.708 0.215 244.975);
-  --color-blue-500: oklch(0.598 0.216 244.975);
-  --color-blue-600: oklch(0.508 0.202 244.975);
-  
-  --color-green-50: oklch(0.971 0.038 143.853);
-  --color-green-100: oklch(0.936 0.075 143.853);
-  --color-green-500: oklch(0.658 0.193 142.495);
-  
-  --color-purple-50: oklch(0.984 0.038 304.392);
-  --color-purple-100: oklch(0.957 0.075 304.392);
-  --color-purple-500: oklch(0.652 0.244 275.486);
-  
-  --color-red-50: oklch(0.984 0.037 17.726);
-  --color-red-100: oklch(0.957 0.075 17.726);
-  --color-red-500: oklch(0.637 0.237 25.331);
-  
-  --color-yellow-50: oklch(0.984 0.038 80.207);
-  --color-yellow-100: oklch(0.957 0.075 80.207);
-  --color-yellow-500: oklch(0.823 0.218 80.207);
-  
   /* Configuration des polices */
   --font-family-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-family-lobster: "Lobster", cursive, serif;
-}
 
-/* Mode sombre - Couleurs bleues pour le thème dark */
-.dark {
-  /* Couleurs primary - Mode sombre (nuances de bleu) */
-  --color-primary-50: oklch(0.984 0.028 244.975);
-  --color-primary-100: oklch(0.957 0.063 244.975);
-  --color-primary-200: oklch(0.898 0.125 244.975);
-  --color-primary-300: oklch(0.788 0.187 244.975);
-  --color-primary-400: oklch(0.708 0.215 244.975);
-  --color-primary-500: oklch(0.598 0.216 244.975); /* Bleu principal pour le mode sombre */
-  --color-primary-600: oklch(0.508 0.202 244.975);
-  --color-primary-700: oklch(0.418 0.188 244.975);
-  --color-primary-800: oklch(0.338 0.174 244.975);
-  --color-primary-900: oklch(0.268 0.139 244.975);
-  --color-primary-950: oklch(0.188 0.093 244.975);
+  /* Couleurs primary - Gamme blanc cassé/crème */
+  --color-primary-50: oklch(99.2% 0.002 85);
+  --color-primary-100: oklch(98.5% 0.005 82);
+  --color-primary-200: oklch(97.2% 0.008 78);
+  --color-primary-300: oklch(95.8% 0.012 75);
+  --color-primary-400: oklch(94.2% 0.016 72);
+  --color-primary-500: oklch(92.5% 0.020 68);
+  --color-primary-600: oklch(90.5% 0.025 65);
+  --color-primary-700: oklch(88.2% 0.030 62);
+  --color-primary-800: oklch(85.5% 0.035 58);
+  --color-primary-900: oklch(82.3% 0.042 55);
+  --color-primary-950: oklch(78.8% 0.048 52);
   
-  /* Grises en mode sombre avec teinte légèrement bleue */
-  --color-gray-50: oklch(0.984 0.003 244.975);
-  --color-gray-100: oklch(0.968 0.007 244.975);
-  --color-gray-200: oklch(0.929 0.013 244.975);
-  --color-gray-300: oklch(0.869 0.022 244.975);
-  --color-gray-400: oklch(0.704 0.04 244.975);
-  --color-gray-500: oklch(0.554 0.046 244.975);
-  --color-gray-600: oklch(0.446 0.043 244.975);
-  --color-gray-700: oklch(0.372 0.044 244.975);
-  --color-gray-800: oklch(0.279 0.041 244.975);
-  --color-gray-900: oklch(0.208 0.042 244.975);
-  --color-gray-950: oklch(0.129 0.042 244.975);
+  /* Couleurs de base */
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(12.8% 0.015 240);
+  
+  /* Couleurs grises - Nuances crème */
+  --color-gray-50: oklch(99.2% 0.002 85);
+  --color-gray-100: oklch(98.5% 0.005 82);
+  --color-gray-200: oklch(97.2% 0.008 78);
+  --color-gray-300: oklch(95.8% 0.012 75);
+  --color-gray-400: oklch(94.2% 0.016 72);
+  --color-gray-500: oklch(92.5% 0.020 68);
+  --color-gray-600: oklch(90.5% 0.025 65);
+  --color-gray-700: oklch(88.2% 0.030 62);
+  --color-gray-800: oklch(85.5% 0.035 58);
+  --color-gray-900: oklch(82.3% 0.042 55);
+  --color-gray-950: oklch(78.8% 0.048 52);
+  
+  /* Nuances crème */
+  --color-cream-50: oklch(99.5% 0.001 88);
+  --color-cream-100: oklch(98.8% 0.003 85);
+  --color-cream-200: oklch(97.8% 0.006 82);
+  --color-cream-300: oklch(96.5% 0.010 78);
+  --color-cream-400: oklch(95.0% 0.014 75);
+  --color-cream-500: oklch(93.2% 0.018 72);
+  --color-cream-600: oklch(91.2% 0.023 68);
+  --color-cream-700: oklch(88.8% 0.028 65);
+  --color-cream-800: oklch(86.0% 0.034 62);
+  --color-cream-900: oklch(83.0% 0.040 58);
+  --color-cream-950: oklch(79.5% 0.046 55);
+  
+  /* Nuances ivoire */
+  --color-ivory-50: oklch(99.3% 0.002 70);
+  --color-ivory-100: oklch(98.2% 0.005 68);
+  --color-ivory-200: oklch(96.8% 0.009 66);
+  --color-ivory-300: oklch(95.2% 0.013 64);
+  --color-ivory-400: oklch(93.5% 0.017 62);
+  --color-ivory-500: oklch(91.5% 0.022 60);
+  
+  /* Nuances beige chaud */
+  --color-beige-50: oklch(98.5% 0.008 45);
+  --color-beige-100: oklch(96.8% 0.012 48);
+  --color-beige-200: oklch(94.8% 0.018 52);
+  --color-beige-300: oklch(92.5% 0.024 55);
+  --color-beige-400: oklch(90.0% 0.030 58);
+  --color-beige-500: oklch(87.2% 0.036 62);
+  
+  /* Couleurs d'accent dorées */
+  --color-gold-50: oklch(97.5% 0.015 85);
+  --color-gold-100: oklch(95.2% 0.025 82);
+  --color-gold-200: oklch(92.5% 0.040 78);
+  --color-gold-300: oklch(89.2% 0.058 75);
+  --color-gold-400: oklch(85.8% 0.075 72);
+  --color-gold-500: oklch(82.0% 0.095 68);
+  --color-gold-600: oklch(78.5% 0.115 65);
+  --color-gold-700: oklch(74.8% 0.135 62);
+  --color-gold-800: oklch(70.5% 0.155 58);
+  --color-gold-900: oklch(66.0% 0.175 55);
+  --color-gold-950: oklch(61.2% 0.195 52);
+
+    /* Terre de sienne - s'harmonise parfaitement avec le noyer */
+  --color-skill-terra-light: oklch(85.2% 0.045 35);
+  --color-skill-terra: oklch(72.5% 0.065 40);
+  --color-skill-terra-dark: oklch(58.8% 0.085 45);
+  
+  /* Vert olive/mousse - très naturel avec le thème bois */
+  --color-skill-olive-light: oklch(82.5% 0.035 125);
+  --color-skill-olive: oklch(68.2% 0.055 130);
+  --color-skill-olive-dark: oklch(54.8% 0.075 135);
+  
+  /* Rouge bordeaux/acajou - s'accorde avec les tons chauds */
+  --color-skill-burgundy-light: oklch(78.5% 0.075 15);
+  --color-skill-burgundy: oklch(64.2% 0.095 20);
+  --color-skill-burgundy-dark: oklch(50.8% 0.115 25);
+  
+  /* Couleurs noyer foncé optimisées */
+  --color-walnut-lightest: oklch(82.5% 0.028 45);
+  --color-walnut-lighter: oklch(72.8% 0.035 48);
+  --color-walnut-light: oklch(62.5% 0.045 52);
+  --color-walnut-medium: oklch(52.2% 0.055 55);
+  --color-walnut-dark: oklch(42.8% 0.065 58);
+  --color-walnut-darker: oklch(33.5% 0.058 60);
+  --color-walnut-darkest: oklch(25.2% 0.050 62);
+  
+  /* Accents cuivrés naturels */
+  --color-walnut-gold-light: oklch(85.2% 0.088 58);
+  --color-walnut-gold: oklch(78.5% 0.105 62);
+  --color-walnut-gold-dark: oklch(71.8% 0.125 65);
+  
+  /* Texte optimal sur noyer */
+  --color-walnut-text-light: oklch(95.5% 0.008 45);
+  --color-walnut-text-dark: oklch(22.2% 0.065 62);
 }
 
-/* Animations personnalisées */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* ========== MODE SOMBRE ========== */
+.dark {
+  /* Couleurs grises bleues pour le mode sombre */
+  --color-gray-50: oklch(96.8% 0.008 220);
+  --color-gray-100: oklch(92.5% 0.015 225);
+  --color-gray-200: oklch(85.2% 0.025 230);
+  --color-gray-300: oklch(75.8% 0.035 235);
+  --color-gray-400: oklch(62.5% 0.045 240);
+  --color-gray-500: oklch(48.7% 0.055 245);
+  --color-gray-600: oklch(35.8% 0.045 248);
+  --color-gray-700: oklch(25.2% 0.035 252);
+  --color-gray-800: oklch(18.7% 0.025 255);
+  --color-gray-900: oklch(14.2% 0.018 258);
+  --color-gray-950: oklch(10.8% 0.012 260);
+  
+  /* Couleurs dorées pour le mode sombre */
+  --color-gold-50: oklch(96.8% 0.035 87.8);
+  --color-gold-100: oklch(94.2% 0.065 87.8);
+  --color-gold-200: oklch(91.5% 0.105 87.8);
+  --color-gold-300: oklch(89.2% 0.145 87.8);
+  --color-gold-400: oklch(87.8% 0.165 87.8);
+  --color-gold-500: oklch(91.2% 0.185 87.8);
+  --color-gold-600: oklch(88.5% 0.175 87.8);
+  --color-gold-700: oklch(84.8% 0.165 87.8);
+  --color-gold-800: oklch(79.2% 0.155 87.8);
+  --color-gold-900: oklch(72.8% 0.145 87.8);
+  --color-gold-950: oklch(65.5% 0.135 87.8);
+
+  /* AJOUT : Couleurs walnut adaptées pour le mode sombre */
+  --color-walnut-lightest: oklch(92.5% 0.015 45);
+  --color-walnut-lighter: oklch(88.2% 0.025 48);
+  --color-walnut-light: oklch(82.5% 0.035 52);
+  --color-walnut-medium: oklch(75.8% 0.045 55);
+  --color-walnut-dark: oklch(65.2% 0.055 58);
+  --color-walnut-darker: oklch(55.8% 0.048 60);
+  --color-walnut-darkest: oklch(45.2% 0.040 62);
+  
+  /* AJOUT : Accents cuivrés pour le mode sombre */
+  --color-walnut-gold-light: oklch(91.2% 0.098 58);
+  --color-walnut-gold: oklch(86.5% 0.115 62);
+  --color-walnut-gold-dark: oklch(79.8% 0.135 65);
+  
+  /* AJOUT : Texte optimal pour le mode sombre */
+  --color-walnut-text-light: oklch(95.5% 0.008 45);
+  --color-walnut-text-dark: oklch(12.2% 0.065 260);
+
+  /* AJOUT : Couleurs de compétences pour le mode sombre */
+  /* Terre de sienne adaptée */
+  --color-skill-terra-light: oklch(88.2% 0.055 35);
+  --color-skill-terra: oklch(78.5% 0.075 40);
+  --color-skill-terra-dark: oklch(68.8% 0.095 45);
+  
+  /* Vert olive adapté */
+  --color-skill-olive-light: oklch(85.5% 0.045 125);
+  --color-skill-olive: oklch(75.2% 0.065 130);
+  --color-skill-olive-dark: oklch(64.8% 0.085 135);
+  
+  /* Rouge bordeaux adapté */
+  --color-skill-burgundy-light: oklch(82.5% 0.085 15);
+  --color-skill-burgundy: oklch(72.2% 0.105 20);
+  --color-skill-burgundy-dark: oklch(60.8% 0.125 25);
+
+  /* AJOUT : Couleurs crème adaptées pour le mode sombre */
+  --color-cream-50: oklch(92.5% 0.008 88);
+  --color-cream-100: oklch(88.8% 0.013 85);
+  --color-cream-200: oklch(84.8% 0.018 82);
+  --color-cream-300: oklch(80.5% 0.024 78);
+  --color-cream-400: oklch(76.0% 0.030 75);
+  --color-cream-500: oklch(71.2% 0.036 72);
+  --color-cream-600: oklch(66.2% 0.043 68);
+  --color-cream-700: oklch(61.8% 0.050 65);
+  --color-cream-800: oklch(57.0% 0.058 62);
+  --color-cream-900: oklch(52.0% 0.065 58);
+  --color-cream-950: oklch(47.5% 0.072 55);
+
+  /* AJOUT : Couleurs ivoire adaptées pour le mode sombre */
+  --color-ivory-50: oklch(91.3% 0.012 70);
+  --color-ivory-100: oklch(87.2% 0.018 68);
+  --color-ivory-200: oklch(83.8% 0.024 66);
+  --color-ivory-300: oklch(80.2% 0.030 64);
+  --color-ivory-400: oklch(76.5% 0.036 62);
+  --color-ivory-500: oklch(72.5% 0.042 60);
+
+  /* AJOUT : Couleurs beige adaptées pour le mode sombre */
+  --color-beige-50: oklch(89.5% 0.018 45);
+  --color-beige-100: oklch(85.8% 0.024 48);
+  --color-beige-200: oklch(81.8% 0.032 52);
+  --color-beige-300: oklch(77.5% 0.040 55);
+  --color-beige-400: oklch(73.0% 0.048 58);
+  --color-beige-500: oklch(68.2% 0.056 62);
 }
 
-@keyframes fadeInUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
+
+/* ========== ANIMATIONS ========== */
+@keyframes walnutGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px color-mix(in oklch, oklch(var(--color-walnut-gold)), transparent 70%);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+  50% {
+    box-shadow: 0 0 20px color-mix(in oklch, oklch(var(--color-walnut-gold)), transparent 50%),
+                0 0 30px color-mix(in oklch, oklch(var(--color-walnut-gold-light)), transparent 60%);
   }
 }
 
-@keyframes slideInLeft {
-  from { 
-    opacity: 0; 
-    transform: translateX(-20px); 
+@keyframes walnutShimmer {
+  0%, 100% { 
+    background-position: -200% center; 
   }
-  to { 
-    opacity: 1; 
-    transform: translateX(0); 
+  50% { 
+    background-position: 200% center; 
   }
 }
 
-@keyframes slideInRight {
-  from { 
-    opacity: 0; 
-    transform: translateX(20px); 
+@keyframes walnutSlideDown {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
   }
-  to { 
-    opacity: 1; 
-    transform: translateX(0); 
+  50% {
+    transform: translateY(-5px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-/* Classes utilitaires personnalisées */
-@utility animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+@keyframes walnutFocus {
+  0%, 100% {
+    box-shadow: 0 0 0 3px color-mix(in oklch, oklch(var(--color-walnut-gold)) 30%, transparent 70%);
+  }
+  50% {
+    box-shadow: 0 0 0 3px color-mix(in oklch, oklch(var(--color-walnut-gold)) 60%, transparent 40%);
+  }
 }
 
-@utility animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+/* ========== UTILITAIRES PERSONNALISÉS ========== */
+@utility animate-walnut-glow {
+  animation: walnutGlow 2.5s ease-in-out infinite;
 }
 
-@utility animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out forwards;
+@utility animate-walnut-shimmer {
+  background: linear-gradient(90deg, 
+    oklch(var(--color-walnut-lighter)), 
+    oklch(var(--color-walnut-lightest)), 
+    oklch(var(--color-walnut-lighter)));
+  background-size: 200% 100%;
+  animation: walnutShimmer 3s ease-in-out infinite;
 }
 
-@utility animate-slide-in-right {
-  animation: slideInRight 0.6s ease-out forwards;
-}
-
-/* Styles de base */
+/* ========== STYLES DE BASE ========== */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -156,63 +272,523 @@
   
   body {
     font-family: var(--font-family-sans);
-    @apply antialiased;
+    background-color: oklch(var(--color-cream-50));
+    color: oklch(var(--color-gray-800));
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dark body {
+    background-color: oklch(var(--color-gray-950));
+    color: oklch(var(--color-gray-50));
   }
   
   .font-lobster {
     font-family: var(--font-family-lobster);
   }
   
-  /* Styles d'accessibilité avec adaptation au thème */
+  /* Styles d'accessibilité */
   :focus {
     outline: none;
-    box-shadow: 0 0 0 2px oklch(var(--color-primary-500)), 0 0 0 4px oklch(var(--color-primary-500) / 0.3);
+    box-shadow: 0 0 0 2px oklch(var(--color-gold-500)), 
+                0 0 0 4px oklch(var(--color-cream-300));
   }
 
   ::selection {
-    background-color: oklch(var(--color-primary-500));
-    color: oklch(var(--color-white));
+    background-color: oklch(var(--color-cream-300));
+    color: oklch(var(--color-gray-800));
   }
   
   .dark ::selection {
-    background-color: oklch(var(--color-primary-400));
-    color: oklch(var(--color-white));
+    background-color: oklch(var(--color-gold-500) / 0.3);
+    color: oklch(var(--color-gray-950));
+  }
+  
+  /* Scrollbar personnalisée avec couleurs noyer */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: oklch(var(--color-walnut-lighter));
+    border-radius: 12px;
+    border: 3px solid oklch(var(--color-cream-50));
+    box-shadow: inset 0 2px 4px color-mix(in oklch, oklch(var(--color-walnut-light)), transparent 80%);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-walnut-dark)), 
+      oklch(var(--color-walnut-darker)));
+    border-radius: 12px;
+    border: 3px solid oklch(var(--color-walnut-lighter));
+    box-shadow: 
+      inset 0 2px 4px color-mix(in oklch, oklch(var(--color-walnut-darkest)), transparent 70%),
+      inset 0 1px 2px color-mix(in oklch, oklch(var(--color-walnut-light)), transparent 85%);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-walnut-darker)), 
+      oklch(var(--color-walnut-darkest)));
+    box-shadow: 
+      inset 0 2px 4px color-mix(in oklch, oklch(var(--color-walnut-darkest)), transparent 60%),
+      0 0 12px color-mix(in oklch, oklch(var(--color-walnut-gold)), transparent 60%);
+  }
+  
+  ::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-walnut-gold-dark)), 
+      oklch(var(--color-walnut-gold)));
+  }
+  
+  ::-webkit-scrollbar-corner {
+    background: oklch(var(--color-walnut-lighter));
+  }
+  
+  /* Scrollbar mode sombre */
+  .dark ::-webkit-scrollbar-track {
+    background: oklch(var(--color-gray-900));
+    border-color: oklch(var(--color-gray-950));
+  }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-gray-700)), 
+      oklch(var(--color-gray-600)));
+    border-color: oklch(var(--color-gray-800));
+  }
+  
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-gray-600)), 
+      oklch(var(--color-gold-600)));
+    box-shadow: 
+      inset 0 1px 3px color-mix(in oklch, oklch(var(--color-gray-500)), transparent 60%),
+      0 0 8px color-mix(in oklch, oklch(var(--color-gold-500)), transparent 60%);
   }
 }
 
-/* Configuration du container */
+/* ========== COMPOSANTS ========== */
+/* ========== COMPOSANTS - CORRECTIONS ========== */
 @layer components {
+  
+  /* Container */
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   
-  /* Classes utilitaires pour les thèmes */
+  /* Classes adaptatives */
   .text-adaptive {
-    @apply text-gray-900 dark:text-gray-100;
+    color: oklch(var(--color-gray-800));
+  }
+  
+  .dark .text-adaptive {
+    color: oklch(var(--color-gray-100));
+  }
+  
+  .text-adaptive-secondary {
+    color: oklch(var(--color-cream-800));
+  }
+  
+  .dark .text-adaptive-secondary {
+    color: oklch(var(--color-gray-300));
   }
   
   .bg-adaptive {
-    @apply bg-white dark:bg-gray-800;
+    background-color: oklch(var(--color-cream-100));
+  }
+  
+  .dark .bg-adaptive {
+    background-color: oklch(var(--color-gray-800));
+  }
+  
+  .bg-adaptive-primary {
+    background-color: oklch(var(--color-cream-50));
+  }
+  
+  .dark .bg-adaptive-primary {
+    background-color: oklch(var(--color-gray-950));
   }
   
   .border-adaptive {
-    @apply border-gray-200 dark:border-gray-700;
+    border-color: oklch(var(--color-cream-300));
   }
   
-  /* Boutons adaptatifs */
+  .dark .border-adaptive {
+    border-color: oklch(var(--color-gray-600));
+  }
+
+  /* Classes walnut adaptatives */
+  .text-walnut-adaptive {
+    color: oklch(var(--color-walnut-text-dark));
+  }
+  
+  .dark .text-walnut-adaptive {
+    color: oklch(var(--color-walnut-text-light));
+  }
+  
+  .text-walnut-gold-adaptive {
+    color: oklch(var(--color-walnut-gold-dark));
+  }
+  
+  .dark .text-walnut-gold-adaptive {
+    color: oklch(var(--color-walnut-gold-light));
+  }
+
+  /* Icônes de compétences avec toutes les propriétés nécessaires */
+  .skill-icon-terra {
+    background-color: oklch(var(--color-skill-terra-light));
+    color: oklch(var(--color-skill-terra-dark));
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0.75rem;
+  }
+  
+  .dark .skill-icon-terra {
+    background-color: oklch(var(--color-skill-terra));
+    color: oklch(var(--color-skill-terra-light));
+  }
+  
+  .skill-icon-olive {
+    background-color: oklch(var(--color-skill-olive-light));
+    color: oklch(var(--color-skill-olive-dark));
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0.75rem;
+  }
+  
+  .dark .skill-icon-olive {
+    background-color: oklch(var(--color-skill-olive));
+    color: oklch(var(--color-skill-olive-light));
+  }
+  
+  .skill-icon-burgundy {
+    background-color: oklch(var(--color-skill-burgundy-light));
+    color: oklch(var(--color-skill-burgundy-dark));
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0.75rem;
+  }
+  
+  .dark .skill-icon-burgundy {
+    background-color: oklch(var(--color-skill-burgundy));
+    color: oklch(var(--color-skill-burgundy-light));
+  }
+
+  /* Effet hover uniforme pour toutes les couleurs */
+  .skill-icon-terra:hover,
+  .skill-icon-olive:hover,
+  .skill-icon-burgundy:hover {
+    background-color: oklch(var(--color-walnut-gold)) !important;
+    color: oklch(var(--color-walnut-text-dark)) !important;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px color-mix(in oklch, oklch(var(--color-walnut-gold)) 40%, transparent 60%);
+  }
+
+  .dark .skill-icon-terra:hover,
+  .dark .skill-icon-olive:hover,
+  .dark .skill-icon-burgundy:hover {
+    background-color: oklch(var(--color-gold-500)) !important;
+    color: oklch(var(--color-gray-900)) !important;
+    box-shadow: 0 4px 12px color-mix(in oklch, oklch(var(--color-gold-500)) 40%, transparent 60%);
+  }
+
+  /* Boutons - Version corrigée sans duplication */
   .btn-primary {
-    @apply bg-gray-900 hover:bg-gray-800 text-white;
-    @apply dark:bg-primary-500 dark:hover:bg-primary-400;
+    background-color: oklch(var(--color-cream-600));
+    color: oklch(var(--color-gray-800));
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   }
   
-  .btn-secondary {
-    @apply bg-gray-100 hover:bg-gray-200 text-gray-900;
-    @apply dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-100;
+  .btn-primary:hover {
+    background-color: oklch(var(--color-cream-700));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   }
   
-  /* Cards adaptatives */
+  .btn-walnut {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-walnut-gold)), 
+      oklch(var(--color-walnut-gold-dark)));
+    color: oklch(var(--color-walnut-text-dark));
+    border: 2px solid oklch(var(--color-walnut-gold-dark));
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.625rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 4px 12px color-mix(in oklch, oklch(var(--color-walnut-gold)) 30%, transparent 70%),
+      inset 0 1px 2px color-mix(in oklch, oklch(var(--color-cream-50)) 20%, transparent 80%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dark .btn-walnut {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-gold-600)), 
+      oklch(var(--color-gold-700)));
+    color: oklch(var(--color-gray-950));
+    border: 2px solid oklch(var(--color-gold-500));
+    box-shadow: 
+      0 4px 12px color-mix(in oklch, oklch(var(--color-gold-600)) 30%, transparent 70%),
+      inset 0 1px 2px color-mix(in oklch, oklch(var(--color-gray-200)) 20%, transparent 80%);
+  }
+
+  .btn-walnut::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      color-mix(in oklch, oklch(var(--color-walnut-gold-light)) 30%, transparent 70%), 
+      transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-walnut:hover::before {
+    left: 100%;
+  }
+
+  .btn-walnut:hover {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-walnut-gold-light)), 
+      oklch(var(--color-walnut-gold)));
+    transform: translateY(-2px);
+    box-shadow: 
+      0 6px 16px color-mix(in oklch, oklch(var(--color-walnut-gold)) 40%, transparent 60%),
+      inset 0 1px 3px color-mix(in oklch, oklch(var(--color-cream-50)) 30%, transparent 70%);
+  }
+
+  .dark .btn-walnut:hover {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-gold-500)), 
+      oklch(var(--color-gold-600)));
+    color: oklch(var(--color-gray-900));
+    box-shadow: 
+      0 6px 16px color-mix(in oklch, oklch(var(--color-gold-500)) 40%, transparent 60%),
+      inset 0 1px 3px color-mix(in oklch, oklch(var(--color-gray-200)) 30%, transparent 70%);
+  }
+  
+  /* Cards */
   .card {
-    @apply bg-white shadow-md rounded-lg;
-    @apply dark:bg-gray-800 dark:shadow-lg;
+    background: linear-gradient(135deg, 
+      oklch(var(--color-walnut-lightest)), 
+      color-mix(in oklch, oklch(var(--color-walnut-lightest)), oklch(var(--color-walnut-lighter)) 15%));
+    border: 1px solid oklch(var(--color-walnut-lighter));
+    color: oklch(var(--color-walnut-text-dark));
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(0deg,
+        transparent 0px,
+        color-mix(in oklch, oklch(var(--color-walnut-light)), transparent 97%) 1px,
+        transparent 2px
+      );
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .card:hover {
+    background: linear-gradient(135deg, 
+      color-mix(in oklch, oklch(var(--color-walnut-lightest)), oklch(var(--color-cream-50)) 20%), 
+      oklch(var(--color-walnut-lightest)));
+    border-color: oklch(var(--color-walnut-light));
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  }
+  
+  .card-walnut {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-walnut-lightest)), 
+      color-mix(in oklch, oklch(var(--color-walnut-lightest)), oklch(var(--color-walnut-lighter)) 15%));
+    border: 2px solid oklch(var(--color-walnut-lighter));
+    border-radius: 1rem;
+    color: oklch(var(--color-walnut-text-dark));
+    box-shadow: 
+      0 8px 24px color-mix(in oklch, oklch(var(--color-walnut-medium)) 20%, transparent 80%),
+      0 4px 8px color-mix(in oklch, oklch(var(--color-walnut-dark)) 15%, transparent 85%);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark .card-walnut {
+    background: linear-gradient(135deg, 
+      oklch(var(--color-gray-800)), 
+      color-mix(in oklch, oklch(var(--color-gray-800)), oklch(var(--color-gray-700)) 15%));
+    border: 2px solid oklch(var(--color-gray-600));
+    color: oklch(var(--color-gray-100));
+    box-shadow: 
+      0 8px 24px color-mix(in oklch, oklch(var(--color-gray-900)) 30%, transparent 70%),
+      0 4px 8px color-mix(in oklch, oklch(var(--color-gray-900)) 20%, transparent 80%);
+  }
+
+  .card-walnut::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(0deg,
+        transparent 0px,
+        color-mix(in oklch, oklch(var(--color-walnut-light)) 3%, transparent 97%) 1px,
+        transparent 2px,
+        color-mix(in oklch, oklch(var(--color-walnut-medium)) 2%, transparent 98%) 3px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(90deg,
+        transparent 0px,
+        color-mix(in oklch, oklch(var(--color-walnut-light)) 1%, transparent 99%) 8px,
+        transparent 16px
+      );
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .card-walnut:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+      0 16px 40px color-mix(in oklch, oklch(var(--color-walnut-medium)) 25%, transparent 75%),
+      0 8px 16px color-mix(in oklch, oklch(var(--color-walnut-dark)) 20%, transparent 80%);
+    border-color: oklch(var(--color-walnut-light));
+  }
+
+  .dark .card-walnut:hover {
+    box-shadow: 
+      0 16px 40px color-mix(in oklch, oklch(var(--color-gray-900)) 40%, transparent 60%),
+      0 8px 16px color-mix(in oklch, oklch(var(--color-gray-900)) 30%, transparent 70%);
+    border-color: oklch(var(--color-gray-500));
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .badge-walnut {
+    background-color: oklch(var(--color-walnut-gold-light));
+    color: oklch(var(--color-walnut-text-dark));
+  }
+
+  .dark .badge-walnut {
+    background-color: oklch(var(--color-gold-700));
+    color: oklch(var(--color-gray-100));
+  }
+
+  .badge-walnut-dark {
+    background-color: oklch(var(--color-walnut-dark));
+    color: oklch(var(--color-walnut-text-light));
+  }
+
+  .dark .badge-walnut-dark {
+    background-color: oklch(var(--color-gray-700));
+    color: oklch(var(--color-gold-300));
+  }
+  
+  .badge-ivory {
+    background-color: oklch(var(--color-ivory-200));
+    color: oklch(var(--color-walnut-text-dark));
+  }
+
+  .dark .badge-ivory {
+    background-color: oklch(var(--color-gray-600));
+    color: oklch(var(--color-gray-100));
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1023px) {
+  .nav-container-walnut {
+    min-width: 26.25rem;
+    padding: 0.625rem 1.5rem;
+    border-radius: 1.125rem;
+  }
+  
+  .nav-item-walnut {
+    min-width: 4.0625rem;
+    height: 3.75rem;
+    padding: 0.875rem 1.125rem;
+    border-radius: 0.75rem;
+  }
+  
+  .nav-icon-walnut {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .theme-toggle-walnut {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-container-walnut {
+    padding: 0.875rem 2.25rem;
+    min-width: 37.5rem;
+    border-radius: 1.375rem;
+  }
+  
+  .nav-item-walnut {
+    min-width: 5.3125rem;
+    height: 4.375rem;
+    padding: 1.125rem 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .nav-icon-walnut {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  
+  .nav-label-walnut {
+    font-size: 0.75rem;
+  }
+  
+  .theme-toggle-walnut {
+    width: 3.25rem;
+    height: 3.25rem;
   }
 }

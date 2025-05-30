@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="flex-grow pt-20 pb-16 flex items-center justify-center">
+  <main class="flex-grow pt-36 pb-16 flex items-center justify-center">
     <div class="container mx-auto px-4 text-center">
       <div class="error-container">
         <div class="error-code">404</div>
