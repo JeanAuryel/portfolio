@@ -1,6 +1,6 @@
 <script setup lang="ts">
 export interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'outline';
+  variant?: 'primary' | 'secondary' | 'accent' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
   fullWidth?: boolean;
@@ -22,11 +22,11 @@ defineEmits<{
 
 const getVariantClasses = (variant: string) => {
   const variants = {
-    primary: 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600',
-    secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200 border-gray-200 dark:border-gray-700',
-    success: 'bg-green-600 hover:bg-green-700 text-white border-green-600',
-    danger: 'bg-red-600 hover:bg-red-700 text-white border-red-600',
-    outline: 'bg-transparent hover:bg-blue-50 dark:hover:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400'
+    primary: 'btn-primary', // Utilise la classe composée définie dans le CSS
+    secondary: 'btn-secondary', // Utilise la classe composée définie dans le CSS
+    accent: 'bg-accent hover:bg-accent text-on-dark border border-accent',
+    outline: 'bg-transparent hover:bg-primary/10 text-main border border-primary',
+    ghost: 'bg-transparent hover:bg-secondary/20 text-secondary border-transparent'
   };
   return variants[variant as keyof typeof variants];
 };
@@ -46,11 +46,12 @@ const getSizeClasses = (size: string) => {
     @click="$emit('click', $event)"
     :disabled="disabled"
     :class="[
-      'font-medium rounded-lg border transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
+      'font-medium rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2',
       getVariantClasses(variant),
       getSizeClasses(size),
       { 'w-full': fullWidth },
-      { 'opacity-50 cursor-not-allowed': disabled }
+      { 'opacity-50 cursor-not-allowed': disabled },
+      { 'transform hover:-translate-y-0.5 hover:shadow-md': !disabled }
     ]"
   >
     <span class="flex items-center justify-center">

@@ -90,6 +90,11 @@ const routes: Array<RouteRecordRaw> = [
       title: 'Page non trouvée - Portfolio Jean-Auryel',
       showLoading: false
     }
+  },
+  {
+  path: '/test-v3',
+  name: 'TestV3',
+  component: () => import('@/views/TestV3View.vue')
   }
 ]
 

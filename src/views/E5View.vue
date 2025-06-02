@@ -22,93 +22,93 @@ const projects = ref<Project[]>([
     id: 1,
     name: 'Organizheur',
     category: 'formation',
-    description: 'Application de gestion et d\'organisation personnelle',
-    detailedDescription: 'Organizheur est une application web complète permettant aux utilisateurs de gérer leurs tâches, leurs événements et leur planning de manière efficace. L\'application offre une interface intuitive avec un système de notifications, un calendrier intégré et des fonctionnalités de collaboration pour les équipes.',
-    technologies: ['Vue.js 3.5', 'TypeScript', 'Tailwind CSS', 'PHP', 'MySQL'],
+    description: 'Application de gestion et de planification de tâches',
+    detailedDescription: 'Application de gestion et de planification de tâches, permettant d\'organiser ses activités, de suivre l\'avancement des missions et de faciliter le travail collaboratif. Développée avec une architecture frontend/backend complète.',
+    technologies: ['Vue.js 3', 'Vite', 'TypeScript', 'TailwindCSS', 'Node.js', 'Express', 'MySQL', 'JWT'],
     image: 'https://picsum.photos/400/300?random=1',
-    date: 'Octobre à Novembre 2024'
+    date: 'Octobre - Novembre 2024'
   },
   {
     id: 2,
     name: 'Deliver\'easy',
     category: 'formation',
-    description: 'Application de livraison à domicile',
-    detailedDescription: 'Deliver\'easy est une plateforme de livraison qui connecte les restaurants locaux avec les clients. L\'application propose un système de commande intuitive, un suivi en temps réel, et une interface d\'administration complète pour les restaurateurs.',
-    technologies: ['Vue.js 3', 'Node.js', 'Express', 'MongoDB', 'Socket.io'],
+    description: 'Système de suivi et de gestion des livraisons',
+    detailedDescription: 'Système de suivi et de gestion des livraisons, offrant un suivi en temps réel des commandes, un historique des livraisons et une interface pour optimiser la logistique.',
+    technologies: ['Vue.js 3', 'Vite', 'TypeScript', 'TailwindCSS', 'Node.js', 'Express.js', 'MySQL', 'JWT', 'bcrypt'],
     image: 'https://picsum.photos/400/300?random=2',
-    date: 'Novembre à Décembre 2024'
+    date: 'Novembre - Décembre 2024'
   },
   {
     id: 3,
     name: 'NurseCare',
     category: 'formation',
-    description: 'Application de gestion pour infirmières',
-    detailedDescription: 'NurseCare est une solution digitale dédiée aux infirmières libérales pour la gestion de leur patientèle. Elle inclut un planning intelligent, un système de dossier patient sécurisé, et des outils de communication avec les médecins.',
-    technologies: ['React', 'TypeScript', 'Express', 'PostgreSQL', 'Docker'],
+    description: 'Solution destinée au secteur de la santé',
+    detailedDescription: 'Solution destinée au secteur de la santé, permettant de gérer la prise en charge des patients, de faciliter l\'accès aux informations médicales et de coordonner les soins au quotidien.',
+    technologies: ['Vue.js 3', 'Vite', 'TypeScript', 'TailwindCSS', 'Node.js', 'Express.js', 'MySQL', 'JWT'],
     image: 'https://picsum.photos/400/300?random=3',
-    date: 'Décembre 2024 à Janvier 2025'
+    date: 'Décembre 2024 - Janvier 2025'
   },
   {
     id: 4,
-    name: 'CaristSI',
+    name: 'CaristSI Desktop',
     category: 'formation',
-    description: 'Système d\'information web pour caristes',
-    detailedDescription: 'CaristSI est un système d\'information complet pour la gestion d\'entrepôts et de stocks. Il permet aux caristes de gérer efficacement les mouvements de marchandises, optimiser les espaces de stockage et générer des rapports détaillés.',
-    technologies: ['Laravel', 'Vue.js', 'MySQL', 'Bootstrap', 'Chart.js'],
+    description: 'Application de bureau pour caristes managers',
+    detailedDescription: 'Application de bureau conçue pour les caristes managers afin de visualiser la gestion de colis au sein d\'un entrepôt via la gestion des emplacements, rangées, colonnes et du volume de l\'entrepôt.',
+    technologies: ['Kotlin', 'JetBrains Compose', 'SQLite', 'MySQL', 'MVVM', 'IntelliJ IDEA'],
     image: 'https://picsum.photos/400/300?random=4',
-    date: 'Février à Mars 2025'
+    date: 'Février - Mars 2025'
   },
   {
     id: 5,
     name: 'CaristSI Mobile',
     category: 'formation',
-    description: 'Version mobile de CaristSI',
-    detailedDescription: 'Application mobile compagnon de CaristSI, permettant aux caristes de scanner les codes-barres, mettre à jour les stocks en temps réel, et recevoir des notifications push pour les nouvelles tâches.',
-    technologies: ['React Native', 'Expo', 'Redux', 'Firebase'],
+    description: 'Application mobile pour caristes terrain',
+    detailedDescription: 'Application mobile conçue pour simplifier la gestion des emplacements des colis d\'entrepôts via scan des codes des colis afin de rendre le travail sur le terrain plus efficace pour les caristes.',
+    technologies: ['Kotlin', 'Jetpack Compose', 'Room SQLite', 'Retrofit', 'MVVM'],
     image: 'https://picsum.photos/400/300?random=5',
-    date: 'Mars à Avril 2023'
+    date: 'Mars - Avril 2025'
   },
   {
     id: 6,
-    name: 'Arka (Formation)',
+    name: 'Arka Desktop',
     category: 'formation',
-    description: 'Plateforme e-learning',
-    detailedDescription: 'Arka est une plateforme d\'apprentissage en ligne développée dans le cadre de ma formation. Elle propose des cours interactifs, des quiz, un système de progression et des certificats de completion.',
-    technologies: ['Vue.js 3', 'Nuxt.js', 'Supabase', 'Tailwind CSS'],
+    description: 'Application de gestion de fichiers familiaux',
+    detailedDescription: 'Application de bureau conçue dans le but de centraliser et de permettre la gestion des fichiers inhérents à une famille (identité, scolarité, santé, etc).',
+    technologies: ['Kotlin JVM', 'JetBrains Compose', 'MySQL', 'Ktorm', 'Ktor', 'Koin'],
     image: 'https://picsum.photos/400/300?random=6',
-    date: 'Mai 2025'
+    date: 'Avril 2025'
   },
   {
     id: 7,
-    name: 'Arka Mobile (Formation)',
+    name: 'Arka Mobile',
     category: 'formation',
-    description: 'Application mobile pour Arka',
-    detailedDescription: 'Version mobile d\'Arka permettant l\'apprentissage sur tous supports. Includes mode hors-ligne, synchronisation automatique, et interface adaptative.',
-    technologies: ['Flutter', 'Dart', 'SQLite', 'Firebase'],
+    description: 'Application mobile de gestion familiale',
+    detailedDescription: 'Application mobile de gestion des fichiers de famille disposant d\'une fonctionnalité de scan afin de pouvoir numériser les documents et de les placer dans l\'espace de gestion d\'un membre de famille.',
+    technologies: ['Kotlin', 'Jetpack Compose', 'Room SQLite', 'ML Kit', 'Ktor Client', 'MVVM'],
     image: 'https://picsum.photos/400/300?random=7',
-    date: 'Mai à Juin 2025'
+    date: 'Avril - Mai 2025'
   },
-  // Projet réalisé en entreprise
+  // Projets réalisés en entreprise (2ème année)
   {
     id: 8,
-    name: 'Vigie IT',
+    name: 'Vigie IT EVT',
     category: 'entreprise',
-    description: 'Plateforme de monitoring IT',
-    detailedDescription: 'Vigie IT est une solution de monitoring et de supervision d\'infrastructure IT développée durant mon stage. Elle offre une surveillance en temps réel, des alertes personnalisables, et des tableaux de bord d\'analyse de performance.',
-    technologies: ['Vue.js 3.5', 'TypeScript', 'Python', 'Django', 'PostgreSQL', 'Docker', 'Redis'],
-    image: 'https://picsum.photos/400/300?random=8',
-    date: 'Février 2024 - Mai 2024'
+    description: 'Solution de surveillance infrastructure IT',
+    detailedDescription: 'Solution de surveillance et de gestion des infrastructures informatiques, Vigie IT EVT permet de centraliser le suivi des événements, d\'anticiper les problèmes et de diagnostiquer rapidement les incidents. Cette plateforme offre une vue globale des performances et des alertes.',
+    technologies: ['Monitoring', 'Infrastructure IT', 'Alertes', 'Diagnostic', 'Performance'],
+    image: 'https://picsum.photos/400/300?random=12',
+    date: 'Septembre 2024 - Juillet 2025'
   },
   // Projets personnels
   {
     id: 9,
     name: 'KerHope',
     category: 'personnel',
-    description: 'Application d\'aide humanitaire',
-    detailedDescription: 'KerHope est une plateforme solidaire connectant les personnes en difficulté avec des bénévoles locaux. Elle facilite l\'aide alimentaire, l\'accompagnement social, et la mise en réseau communautaire.',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Stripe', 'Google Maps API'],
-    image: 'https://picsum.photos/400/300?random=11',
-    date: 'Juin 2024 - En cours'
+    description: 'Plateforme de solidarité et d\'entraide',
+    detailedDescription: 'Projet orienté vers la solidarité et l\'entraide, KERHOPE vise à mettre en relation des personnes au sein d\'une communauté afin de partager des ressources, des services ou de l\'aide de manière organisée et sécurisée.',
+    technologies: ['Vue.js 3', 'TypeScript', 'Node.js', 'MySQL', 'API REST'],
+    image: 'https://picsum.photos/400/300?random=13',
+    date: 'Janvier 2025'
   }
 ]);
 
@@ -130,22 +130,22 @@ function toggleCard(id: number) {
   }
 }
 
-// Ouvrir le fichier PDF
-function openPdfFile() {
-  window.open('/src/assets/documents/E4- Tableau de synthèse - Epreuve E5 - BTS SIO 2025.pdf', '_blank');
+// Ouvrir le fichier Excel
+function openExcelFile() {
+  window.open('/documents/Tableau_E5_Projets.xlsx', '_blank');
 }
 
-// Télécharger le fichier PDF
-function downloadPdfFile() {
+// Télécharger le fichier Excel
+function downloadExcelFile() {
   const link = document.createElement('a');
-  link.href = '/documents/E4- Tableau de synthèse - Epreuve E5 - BTS SIO 2025.pdf';
-  link.download = 'Tableau de synthèse - Epreuve E5.pdf';
+  link.href = '/documents/Tableau_E5_Projets.xlsx';
+  link.download = 'Tableau_E5_Projets.xlsx';
   link.click();
 }
 </script>
 
 <template>
-  <main class="flex-grow pt-32 pb-16 relative bg-adaptive-primary">
+  <main class="flex-grow pt-32 pb-16 relative bg-main">
     <!-- Background blur overlay when a card is active -->
     <div 
       v-if="activeCardId !== null"
@@ -153,42 +153,42 @@ function downloadPdfFile() {
       @click="activeCardId = null"
     ></div>
     
-    <div class="container mx-auto px-4">
-      <!-- Header avec bouton PDF -->
+    <div class="container-main">
+      <!-- Header avec bouton Excel -->
       <div class="flex justify-between items-center mb-12">
         <div>
-          <h1 class="text-5xl font-bold mb-4 text-adaptive">Mes Réalisations - E5</h1>
-          <p class="text-xl text-adaptive-secondary">
-            Découvrez les projets que j'ai réalisés en formation, en entreprise et personnellement
+          <h1 class="text-5xl font-bold mb-4 text-main">Mes Réalisations - E5</h1>
+          <p class="text-xl text-secondary">
+            Découvrez une liste non exhaustive des projets que j'ai réalisés en formation, en entreprise et personnellement.
           </p>
         </div>
         
-        <!-- Bouton PDF -->
+        <!-- Bouton Excel -->
         <div class="flex flex-col sm:flex-row gap-3">
           <button 
-            @click="openPdfFile"
-            class="flex items-center px-4 py-2 bg-skill-burgundy text-skill-burgundy-light rounded-lg hover:bg-skill-burgundy-dark hover:text-skill-burgundy-light transition-colors shadow-lg"
+            @click="openExcelFile"
+            class="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors shadow-cream dark:shadow-dark"
           >
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h12v8H4V6zm2 2v4h2V8H6zm4 0v1h2V8h-2zm0 2v2h2v-2h-2z"/>
+              <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 2V5h-4v10h4V5zM4 5h4v10H4V5z"/>
             </svg>
-            Ouvrir PDF
+            Ouvrir Excel
           </button>
           <button 
-            @click="downloadPdfFile"
-            class="btn-walnut"
+            @click="downloadExcelFile"
+            class="btn-primary"
           >
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18v2h20v-2H0z"/>
             </svg>
-            Télécharger PDF
+            Télécharger
           </button>
         </div>
       </div>
       
       <!-- Projets en formation -->
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 text-skill-terra">
+        <h2 class="text-3xl font-bold mb-8 text-accent">
           🎓 Projets réalisés en formation
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -208,28 +208,28 @@ function downloadPdfFile() {
                 <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
                   <img :src="project.image" :alt="project.name" class="w-full h-48 object-cover">
                 </div>
-                <h3 class="text-xl font-bold mb-2 text-adaptive">{{ project.name }}</h3>
-                <p class="text-adaptive-secondary text-sm">{{ project.description }}</p>
-                <div class="mt-4 text-xs text-adaptive-secondary opacity-75">{{ project.date }}</div>
+                <h3 class="text-xl font-bold mb-2 text-main">{{ project.name }}</h3>
+                <p class="text-secondary text-sm">{{ project.description }}</p>
+                <div class="mt-4 text-xs text-secondary">{{ project.date }}</div>
               </div>
               
               <!-- Face arrière -->
               <div class="project-card-back">
                 <div class="flex h-full">
                   <div class="flex-1 pr-4">
-                    <h3 class="text-xl font-bold mb-4 text-adaptive">{{ project.name }}</h3>
-                    <p class="text-adaptive-secondary text-sm mb-4">{{ project.detailedDescription }}</p>
-                    <div class="text-xs text-adaptive-secondary opacity-75 mt-auto">{{ project.date }}</div>
+                    <h3 class="text-xl font-bold mb-4 text-main">{{ project.name }}</h3>
+                    <p class="text-secondary text-sm mb-4">{{ project.detailedDescription }}</p>
+                    <div class="text-xs text-secondary mt-auto">{{ project.date }}</div>
                   </div>
                   
                   <!-- Technologies -->
-                  <div class="w-32 border-l border-adaptive pl-4">
-                    <h4 class="font-semibold mb-3 text-sm text-adaptive">Technologies</h4>
+                  <div class="w-32 border-l border-main pl-4">
+                    <h4 class="font-semibold mb-3 text-sm text-main">Technologies</h4>
                     <div class="space-y-2">
                       <div 
                         v-for="tech in project.technologies" 
                         :key="tech"
-                        class="text-xs bg-skill-terra-light text-skill-terra-dark px-2 py-1 rounded-full"
+                        class="badge text-xs"
                       >
                         {{ tech }}
                       </div>
@@ -244,7 +244,7 @@ function downloadPdfFile() {
       
       <!-- Projets en entreprise -->
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 text-skill-olive">
+        <h2 class="text-3xl font-bold mb-8 text-green-600 dark:text-green-400">
           🏢 Projets réalisés en entreprise
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -264,28 +264,28 @@ function downloadPdfFile() {
                 <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
                   <img :src="project.image" :alt="project.name" class="w-full h-48 object-cover">
                 </div>
-                <h3 class="text-xl font-bold mb-2 text-adaptive">{{ project.name }}</h3>
-                <p class="text-adaptive-secondary text-sm">{{ project.description }}</p>
-                <div class="mt-4 text-xs text-adaptive-secondary opacity-75">{{ project.date }}</div>
+                <h3 class="text-xl font-bold mb-2 text-main">{{ project.name }}</h3>
+                <p class="text-secondary text-sm">{{ project.description }}</p>
+                <div class="mt-4 text-xs text-secondary">{{ project.date }}</div>
               </div>
               
               <!-- Face arrière -->
               <div class="project-card-back">
                 <div class="flex h-full">
                   <div class="flex-1 pr-4">
-                    <h3 class="text-xl font-bold mb-4 text-adaptive">{{ project.name }}</h3>
-                    <p class="text-adaptive-secondary text-sm mb-4">{{ project.detailedDescription }}</p>
-                    <div class="text-xs text-adaptive-secondary opacity-75 mt-auto">{{ project.date }}</div>
+                    <h3 class="text-xl font-bold mb-4 text-main">{{ project.name }}</h3>
+                    <p class="text-secondary text-sm mb-4">{{ project.detailedDescription }}</p>
+                    <div class="text-xs text-secondary mt-auto">{{ project.date }}</div>
                   </div>
                   
                   <!-- Technologies -->
-                  <div class="w-32 border-l border-adaptive pl-4">
-                    <h4 class="font-semibold mb-3 text-sm text-adaptive">Technologies</h4>
+                  <div class="w-32 border-l border-main pl-4">
+                    <h4 class="font-semibold mb-3 text-sm text-main">Technologies</h4>
                     <div class="space-y-2">
                       <div 
                         v-for="tech in project.technologies" 
                         :key="tech"
-                        class="text-xs bg-skill-olive-light text-skill-olive-dark px-2 py-1 rounded-full"
+                        class="text-xs bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 px-2 py-1 rounded-full"
                       >
                         {{ tech }}
                       </div>
@@ -300,7 +300,7 @@ function downloadPdfFile() {
       
       <!-- Projets personnels -->
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 text-skill-burgundy">
+        <h2 class="text-3xl font-bold mb-8 text-purple-600 dark:text-purple-400">
           🚀 Projets personnels
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -320,28 +320,28 @@ function downloadPdfFile() {
                 <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
                   <img :src="project.image" :alt="project.name" class="w-full h-48 object-cover">
                 </div>
-                <h3 class="text-xl font-bold mb-2 text-adaptive">{{ project.name }}</h3>
-                <p class="text-adaptive-secondary text-sm">{{ project.description }}</p>
-                <div class="mt-4 text-xs text-adaptive-secondary opacity-75">{{ project.date }}</div>
+                <h3 class="text-xl font-bold mb-2 text-main">{{ project.name }}</h3>
+                <p class="text-secondary text-sm">{{ project.description }}</p>
+                <div class="mt-4 text-xs text-secondary">{{ project.date }}</div>
               </div>
               
               <!-- Face arrière -->
               <div class="project-card-back">
                 <div class="flex h-full">
                   <div class="flex-1 pr-4">
-                    <h3 class="text-xl font-bold mb-4 text-adaptive">{{ project.name }}</h3>
-                    <p class="text-adaptive-secondary text-sm mb-4">{{ project.detailedDescription }}</p>
-                    <div class="text-xs text-adaptive-secondary opacity-75 mt-auto">{{ project.date }}</div>
+                    <h3 class="text-xl font-bold mb-4 text-main">{{ project.name }}</h3>
+                    <p class="text-secondary text-sm mb-4">{{ project.detailedDescription }}</p>
+                    <div class="text-xs text-secondary mt-auto">{{ project.date }}</div>
                   </div>
                   
                   <!-- Technologies -->
-                  <div class="w-32 border-l border-adaptive pl-4">
-                    <h4 class="font-semibold mb-3 text-sm text-adaptive">Technologies</h4>
+                  <div class="w-32 border-l border-main pl-4">
+                    <h4 class="font-semibold mb-3 text-sm text-main">Technologies</h4>
                     <div class="space-y-2">
                       <div 
                         v-for="tech in project.technologies" 
                         :key="tech"
-                        class="text-xs bg-skill-burgundy-light text-skill-burgundy-dark px-2 py-1 rounded-full"
+                        class="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full"
                       >
                         {{ tech }}
                       </div>
@@ -358,7 +358,7 @@ function downloadPdfFile() {
 </template>
 
 <style scoped>
-/* Cartes de projet - Version corrigée */
+/* Cartes de projet */
 .project-card {
   height: 400px;
   cursor: pointer;
@@ -366,7 +366,7 @@ function downloadPdfFile() {
   transition: all 0.3s ease;
 }
 
-.project-card:hover:not(.active) {
+.project-card:hover {
   transform: translateY(-5px);
 }
 
@@ -388,7 +388,6 @@ function downloadPdfFile() {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
-  will-change: transform;
 }
 
 .project-card.flip .project-card-inner {
@@ -401,22 +400,18 @@ function downloadPdfFile() {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   padding: 24px;
   border-radius: 12px;
-  background-color: oklch(var(--color-cream-50));
+  background-color: rgb(255 255 255);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  
-  /* Masquer complètement la face non visible */
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  border: 1px solid rgb(var(--oak-200));
 }
 
-.dark .project-card-front,
-.dark .project-card-back {
-  background-color: oklch(var(--color-gray-800));
+:root.dark .project-card-front,
+:root.dark .project-card-back {
+  background-color: rgb(var(--dark-surface-500));
+  border-color: rgb(var(--dark-surface-600));
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
 }
 
 .project-card-back {
@@ -425,58 +420,9 @@ function downloadPdfFile() {
   flex-direction: column;
 }
 
-/* Quand la carte n'est pas flippée, cacher la face arrière */
-.project-card:not(.flip) .project-card-back {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-/* Quand la carte est flippée, cacher la face avant */
-.project-card.flip .project-card-front {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-/* S'assurer que seule la face visible est interactive */
-.project-card.flip .project-card-back {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.project-card:not(.flip) .project-card-front {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
 .project-card.active .project-card-front,
 .project-card.active .project-card-back {
   padding: 32px;
-}
-
-/* Améliorer la transition pour éviter les artefacts visuels */
-.project-card-inner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit;
-  border-radius: inherit;
-  z-index: -1;
-}
-
-/* Améliorer la gestion du z-index */
-.project-card:not(.active) {
-  z-index: 1;
-}
-
-.project-card.active {
-  z-index: 40;
 }
 
 /* Responsive adjustments */
@@ -497,11 +443,11 @@ function downloadPdfFile() {
     padding-left: 0;
     padding-top: 16px;
     border-left: none;
-    border-top: 1px solid oklch(var(--color-cream-300));
+    border-top: 1px solid rgb(var(--oak-300));
   }
   
-  .dark .project-card.active .project-card-back .w-32 {
-    border-top-color: oklch(var(--color-gray-600));
+  :root.dark .project-card.active .project-card-back .w-32 {
+    border-top-color: rgb(var(--dark-surface-600));
   }
   
   .project-card.active .project-card-back .w-32 .space-y-2 {
@@ -515,18 +461,6 @@ function downloadPdfFile() {
 .project-card-back .space-y-2 > div {
   animation: fadeInUp 0.5s ease forwards;
   animation-delay: calc(var(--index) * 0.1s);
-}
-
-/* Animation fadeInUp */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Smooth scrolling */

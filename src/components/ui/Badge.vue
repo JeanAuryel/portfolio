@@ -1,38 +1,34 @@
 <script setup lang="ts">
 export interface BadgeProps {
-  variant?: 'blue' | 'green' | 'yellow' | 'red' | 'purple' | 'gray';
+  variant?: 'primary' | 'secondary' | 'accent' | 'surface' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   outline?: boolean;
 }
 
 withDefaults(defineProps<BadgeProps>(), {
-  variant: 'blue',
+  variant: 'primary',
   size: 'md',
   outline: false
 });
 
 const getVariantClasses = (variant: string, outline: boolean) => {
-  const baseVariants = {
-    blue: outline 
-      ? 'border-blue-500 text-blue-600 dark:text-blue-400' 
-      : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-    green: outline 
-      ? 'border-green-500 text-green-600 dark:text-green-400' 
-      : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-    yellow: outline 
-      ? 'border-yellow-500 text-yellow-600 dark:text-yellow-400' 
-      : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
-    red: outline 
-      ? 'border-red-500 text-red-600 dark:text-red-400' 
-      : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
-    purple: outline 
-      ? 'border-purple-500 text-purple-600 dark:text-purple-400' 
-      : 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
-    gray: outline 
-      ? 'border-gray-500 text-gray-600 dark:text-gray-400' 
-      : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
+  if (outline) {
+    const outlineVariants = {
+      primary: 'border-primary bg-transparent text-main',
+      secondary: 'border-secondary bg-transparent text-secondary', 
+      accent: 'border-accent bg-transparent text-accent',
+      surface: 'border-main bg-transparent text-main'
+    };
+    return outlineVariants[variant as keyof typeof outlineVariants] || outlineVariants.primary;
+  }
+
+  const solidVariants = {
+    primary: 'badge', // Utilise la classe composée définie dans le CSS
+    secondary: 'bg-secondary text-on-dark',
+    accent: 'bg-accent text-on-dark',
+    surface: 'bg-surface text-main border border-main'
   };
-  return baseVariants[variant as keyof typeof baseVariants];
+  return solidVariants[variant as keyof typeof solidVariants] || solidVariants.primary;
 };
 
 const getSizeClasses = (size: string) => {
@@ -48,10 +44,10 @@ const getSizeClasses = (size: string) => {
 <template>
   <span 
     :class="[
-      'inline-flex items-center font-medium rounded-full',
+      'inline-flex items-center font-medium rounded-full transition-all duration-200',
       getSizeClasses(size),
       getVariantClasses(variant, outline),
-      { 'border bg-transparent': outline }
+      { 'border': outline }
     ]"
   >
     <slot />

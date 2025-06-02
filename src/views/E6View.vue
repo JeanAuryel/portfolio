@@ -107,17 +107,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="flex-grow pt-36 pb-16 relative">
-    <div class="container mx-auto px-4">
+  <main class="flex-grow pt-32 pb-16 relative bg-main">
+    <div class="container-main">
       <!-- Header -->
       <div 
         class="text-center mb-12 transition-opacity duration-700"
         :class="{ 'opacity-100': isLoaded, 'opacity-0': !isLoaded }"
       >
-        <h1 class="text-5xl font-bold mb-6 text-gray-900 dark:text-black">
+        <h1 class="text-5xl font-bold mb-6 text-main">
           Mes Réalisations - E6
         </h1>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+        <p class="text-xl text-secondary max-w-4xl mx-auto">
           Détails complets des projets Organizheur et Arka Desktop avec captures d'écran, 
           fonctionnalités détaillées et documentations techniques.
         </p>
@@ -137,10 +137,10 @@ onMounted(() => {
             <div class="flex items-center">
               <span class="text-4xl mr-4">{{ project.icon }}</span>
               <div>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+                <h2 class="text-3xl font-bold text-main">
                   {{ project.name }}
                 </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-300 mt-1">
+                <p class="text-lg text-secondary mt-1">
                   {{ project.description }}
                 </p>
               </div>
@@ -150,7 +150,7 @@ onMounted(() => {
             <div class="flex flex-col sm:flex-row gap-3">
               <button 
                 @click="openDocumentation(project.technicalDocUrl)"
-                :class="`flex items-center px-4 py-2 bg-${project.mainColor}-500 text-white rounded-lg hover:bg-${project.mainColor}-600 transition-colors shadow-lg`"
+                class="btn-primary flex items-center"
               >
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
@@ -160,7 +160,7 @@ onMounted(() => {
               </button>
               <button 
                 @click="openDocumentation(project.functionalDocUrl)"
-                :class="`flex items-center px-4 py-2 bg-${project.mainColor}-500 text-white rounded-lg hover:bg-${project.mainColor}-600 transition-colors shadow-lg`"
+                class="btn-secondary flex items-center"
               >
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6z" clip-rule="evenodd"/>
@@ -173,7 +173,7 @@ onMounted(() => {
           <!-- Contenu du projet -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Galerie d'images -->
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div class="card-main overflow-hidden">
               <div class="relative aspect-video">
                 <!-- Image principale -->
                 <img 
@@ -215,7 +215,7 @@ onMounted(() => {
               </div>
               
               <!-- Miniatures -->
-              <div class="p-4 bg-gray-50 dark:bg-gray-700">
+              <div class="p-4 bg-surface-alt">
                 <div class="flex gap-2 overflow-x-auto">
                   <button
                     v-for="(image, index) in project.images"
@@ -223,8 +223,8 @@ onMounted(() => {
                     @click="goToImage(project.id, index)"
                     :class="`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-colors ${
                       activeImageIndex[project.id] === index 
-                        ? `border-${project.mainColor}-500` 
-                        : 'border-gray-200 dark:border-gray-600'
+                        ? 'border-accent shadow-glow-cream dark:shadow-glow-dark' 
+                        : 'border-main hover:border-accent'
                     }`"
                   >
                     <img :src="image.src" :alt="image.alt" class="w-full h-full object-cover" />
@@ -234,24 +234,24 @@ onMounted(() => {
             </div>
             
             <!-- Description et technologies -->
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-              <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+            <div class="card-main">
+              <h3 class="text-xl font-bold mb-4 text-main">
                 Description détaillée
               </h3>
-              <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+              <p class="text-secondary leading-relaxed mb-6">
                 {{ project.detailedDescription }}
               </p>
               
               <!-- Technologies utilisées -->
               <div>
-                <h4 class="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+                <h4 class="text-lg font-semibold mb-3 text-main">
                   Technologies utilisées
                 </h4>
                 <div class="flex flex-wrap gap-2">
                   <span
                     v-for="tech in project.technologies"
                     :key="tech"
-                    :class="`inline-block px-3 py-1 rounded-full text-sm font-medium bg-${project.mainColor}-100 dark:bg-${project.mainColor}-900 text-${project.mainColor}-800 dark:text-${project.mainColor}-200`"
+                    class="badge"
                   >
                     {{ tech }}
                   </span>

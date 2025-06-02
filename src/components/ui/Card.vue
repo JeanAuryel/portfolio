@@ -5,12 +5,14 @@ export interface CardProps {
   hover?: boolean;
   shadow?: 'sm' | 'md' | 'lg' | 'xl';
   padding?: 'sm' | 'md' | 'lg';
+  variant?: 'main' | 'surface' | 'surface-alt';
 }
 
 withDefaults(defineProps<CardProps>(), {
   hover: true,
   shadow: 'md',
-  padding: 'md'
+  padding: 'md',
+  variant: 'main'
 });
 
 const getShadowClasses = (shadow: string) => {
@@ -31,22 +33,34 @@ const getPaddingClasses = (padding: string) => {
   };
   return paddings[padding as keyof typeof paddings];
 };
+
+const getVariantClasses = (variant: string) => {
+  const variants = {
+    main: 'card-main', // Utilise la classe composée définie dans le CSS
+    surface: 'bg-surface text-main border border-main',
+    'surface-alt': 'bg-surface-alt text-main border border-secondary'
+  };
+  return variants[variant as keyof typeof variants] || variants.main;
+};
 </script>
 
 <template>
   <div 
     :class="[
-      'bg-white dark:bg-gray-800 rounded-lg transition-shadow duration-300',
+      'rounded-lg transition-all duration-300',
+      getVariantClasses(variant),
       getShadowClasses(shadow),
       getPaddingClasses(padding),
-      { 'hover:shadow-lg dark:hover:shadow-gray-700/50 transform hover:-translate-y-1 transition-transform duration-200': hover }
+      { 
+        'hover:shadow-lg transform hover:-translate-y-1 transition-transform duration-200 cursor-pointer': hover 
+      }
     ]"
   >
     <div v-if="title || subtitle" class="mb-4">
-      <h3 v-if="title" class="text-xl font-bold text-gray-900 dark:text-gray-100">
+      <h3 v-if="title" class="text-xl font-bold text-main">
         {{ title }}
       </h3>
-      <p v-if="subtitle" class="text-gray-600 dark:text-gray-400 mt-1">
+      <p v-if="subtitle" class="text-secondary mt-1">
         {{ subtitle }}
       </p>
     </div>
