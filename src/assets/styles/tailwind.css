@@ -1,104 +1,508 @@
-@import "tailwindcss";
-
-/* Import des polices Google */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lobster&display=swap');
 
-/* Configuration des couleurs personnalisées */
-@theme {
-  /* Couleurs primary - Mode clair (blanc/noir dominant) */
-  --color-primary-50: oklch(0.98 0.003 0);
-  --color-primary-100: oklch(0.95 0.005 0);
-  --color-primary-200: oklch(0.9 0.01 0);
-  --color-primary-300: oklch(0.8 0.02 0);
-  --color-primary-400: oklch(0.7 0.03 0);
-  --color-primary-500: oklch(0.15 0.02 0); /* Noir principal pour le mode clair */
-  --color-primary-600: oklch(0.12 0.02 0);
-  --color-primary-700: oklch(0.09 0.02 0);
-  --color-primary-800: oklch(0.06 0.02 0);
-  --color-primary-900: oklch(0.03 0.02 0);
-  --color-primary-950: oklch(0.01 0.01 0);
+/* Directives Tailwind CSS v3 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== VARIABLES CSS PERSONNALISÉES ========== */
+:root {
+  /* Palette crème + bois en RGB (compatible tous navigateurs) */
+  --cream-50: 251 248 243;
+  --cream-100: 247 242 233;
+  --cream-200: 243 235 220;
+  --cream-300: 238 227 203;
+  --cream-400: 232 217 182;
+  --cream-500: 224 204 157;
   
-  /* Couleurs de base essentielles */
-  --color-white: oklch(1 0 0);
-  --color-black: oklch(0 0 0);
+  --oak-50: 245 235 220;
+  --oak-100: 235 220 195;
+  --oak-200: 225 205 170;
+  --oak-300: 215 190 145;
+  --oak-400: 205 175 120;
+  --oak-500: 195 160 95;
+  --oak-600: 185 145 70;
   
-  /* Couleurs grises optimisées pour le mode clair */
-  --color-gray-50: oklch(0.984 0.003 0);
-  --color-gray-100: oklch(0.968 0.007 0);
-  --color-gray-200: oklch(0.929 0.013 0);
-  --color-gray-300: oklch(0.869 0.022 0);
-  --color-gray-400: oklch(0.704 0.04 0);
-  --color-gray-500: oklch(0.554 0.046 0);
-  --color-gray-600: oklch(0.446 0.043 0);
-  --color-gray-700: oklch(0.372 0.044 0);
-  --color-gray-800: oklch(0.279 0.041 0);
-  --color-gray-900: oklch(0.208 0.042 0);
-  --color-gray-950: oklch(0.129 0.042 0);
+  --beech-50: 248 240 228;
+  --beech-100: 242 230 208;
+  --beech-200: 236 220 188;
+  --beech-300: 230 210 168;
+  --beech-400: 224 200 148;
+  --beech-500: 218 190 128;
   
-  /* Couleurs d'accent (gardées colorées pour les occasions spéciales) */
-  --color-blue-50: oklch(0.984 0.054 244.975);
-  --color-blue-100: oklch(0.957 0.063 244.975);
-  --color-blue-400: oklch(0.708 0.215 244.975);
-  --color-blue-500: oklch(0.598 0.216 244.975);
-  --color-blue-600: oklch(0.508 0.202 244.975);
+  --walnut-50: 210 185 155;
+  --walnut-100: 185 155 120;
+  --walnut-200: 160 125 85;
+  --walnut-300: 135 95 50;
+  --walnut-400: 120 85 45;
+  --walnut-500: 105 75 40;
+  --walnut-600: 90 65 35;
+  --walnut-700: 75 55 30;
+  --walnut-800: 60 45 25;
   
-  --color-green-50: oklch(0.971 0.038 143.853);
-  --color-green-100: oklch(0.936 0.075 143.853);
-  --color-green-500: oklch(0.658 0.193 142.495);
+  --mahogany-50: 165 115 95;
+  --mahogany-100: 145 95 75;
+  --mahogany-200: 125 75 55;
+  --mahogany-300: 105 55 35;
+  --mahogany-400: 95 50 32;
+  --mahogany-500: 85 45 28;
+  --mahogany-600: 75 40 24;
+  --mahogany-700: 65 35 20;
+  --mahogany-800: 55 30 16;
   
-  --color-purple-50: oklch(0.984 0.038 304.392);
-  --color-purple-100: oklch(0.957 0.075 304.392);
-  --color-purple-500: oklch(0.652 0.244 275.486);
+  --ebony-50: 115 95 85;
+  --ebony-100: 95 75 65;
+  --ebony-200: 75 55 45;
+  --ebony-300: 55 35 25;
+  --ebony-400: 45 30 22;
+  --ebony-500: 35 25 18;
+  --ebony-600: 30 22 16;
+  --ebony-700: 25 18 13;
+  --ebony-800: 20 15 11;
+  --ebony-900: 15 12 9;
   
-  --color-red-50: oklch(0.984 0.037 17.726);
-  --color-red-100: oklch(0.957 0.075 17.726);
-  --color-red-500: oklch(0.637 0.237 25.331);
+  /* Palette mode sombre */
+  --dark-base-50: 85 70 60;
+  --dark-base-100: 70 55 45;
+  --dark-base-200: 55 40 30;
+  --dark-base-300: 40 25 15;
+  --dark-base-400: 35 22 14;
+  --dark-base-500: 30 20 12;
+  --dark-base-600: 26 18 11;
+  --dark-base-700: 22 16 10;
+  --dark-base-800: 18 14 9;
+  --dark-base-900: 14 12 8;
   
-  --color-yellow-50: oklch(0.984 0.038 80.207);
-  --color-yellow-100: oklch(0.957 0.075 80.207);
-  --color-yellow-500: oklch(0.823 0.218 80.207);
+  --dark-surface-100: 65 50 40;
+  --dark-surface-200: 55 40 30;
+  --dark-surface-300: 45 30 20;
+  --dark-surface-400: 40 26 17;
+  --dark-surface-500: 35 23 15;
+  --dark-surface-600: 30 20 13;
+  --dark-surface-700: 25 17 11;
   
-  /* Configuration des polices */
-  --font-family-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-family-lobster: "Lobster", cursive, serif;
+  --dark-accent-100: 220 195 160;
+  --dark-accent-200: 210 185 150;
+  --dark-accent-300: 200 175 140;
+  --dark-accent-400: 195 170 135;
+  --dark-accent-500: 190 165 130;
+  --dark-accent-600: 180 155 120;
+  --dark-accent-700: 170 145 110;
+  
+  --dark-text-100: 248 245 240;
+  --dark-text-200: 245 240 235;
+  --dark-text-300: 240 235 230;
+  --dark-text-400: 235 230 225;
+  --dark-text-500: 230 225 220;
+  
+  --dark-muted-100: 200 175 150;
+  --dark-muted-200: 190 165 140;
+  --dark-muted-300: 185 160 135;
+  --dark-muted-400: 180 155 130;
+  --dark-muted-500: 175 150 125;
+  --dark-muted-600: 165 140 115;
 }
 
-/* Mode sombre - Couleurs bleues pour le thème dark */
-.dark {
-  /* Couleurs primary - Mode sombre (nuances de bleu) */
-  --color-primary-50: oklch(0.984 0.028 244.975);
-  --color-primary-100: oklch(0.957 0.063 244.975);
-  --color-primary-200: oklch(0.898 0.125 244.975);
-  --color-primary-300: oklch(0.788 0.187 244.975);
-  --color-primary-400: oklch(0.708 0.215 244.975);
-  --color-primary-500: oklch(0.598 0.216 244.975); /* Bleu principal pour le mode sombre */
-  --color-primary-600: oklch(0.508 0.202 244.975);
-  --color-primary-700: oklch(0.418 0.188 244.975);
-  --color-primary-800: oklch(0.338 0.174 244.975);
-  --color-primary-900: oklch(0.268 0.139 244.975);
-  --color-primary-950: oklch(0.188 0.093 244.975);
+/* ========== STYLES DE BASE ========== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   
-  /* Grises en mode sombre avec teinte légèrement bleue */
-  --color-gray-50: oklch(0.984 0.003 244.975);
-  --color-gray-100: oklch(0.968 0.007 244.975);
-  --color-gray-200: oklch(0.929 0.013 244.975);
-  --color-gray-300: oklch(0.869 0.022 244.975);
-  --color-gray-400: oklch(0.704 0.04 244.975);
-  --color-gray-500: oklch(0.554 0.046 244.975);
-  --color-gray-600: oklch(0.446 0.043 244.975);
-  --color-gray-700: oklch(0.372 0.044 244.975);
-  --color-gray-800: oklch(0.279 0.041 244.975);
-  --color-gray-900: oklch(0.208 0.042 244.975);
-  --color-gray-950: oklch(0.129 0.042 244.975);
+  body {
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    background-color: rgb(var(--cream-200));
+    color: rgb(var(--ebony-500));
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dark body {
+    background-color: rgb(var(--dark-base-500));
+    color: rgb(var(--dark-text-300));
+  }
+  
+  .font-lobster {
+    font-family: 'Lobster', cursive;
+  }
+  
+  /* Styles d'accessibilité */
+  :focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgb(var(--mahogany-500)), 
+                0 0 0 4px rgb(var(--mahogany-500) / 0.3);
+  }
+
+  .dark :focus {
+    box-shadow: 0 0 0 2px rgb(var(--dark-accent-500)), 
+                0 0 0 4px rgb(var(--dark-accent-500) / 0.3);
+  }
+
+  ::selection {
+    background-color: rgb(var(--oak-300));
+    color: rgb(var(--ebony-500));
+  }
+  
+  .dark ::selection {
+    background-color: rgb(var(--dark-accent-500));
+    color: rgb(var(--dark-base-500));
+  }
 }
 
-/* Animations personnalisées */
+/* ========== COMPOSANTS PERSONNALISÉS ========== */
+@layer components {
+  /* Classes utilitaires pour les couleurs principales */
+  .bg-main {
+    background-color: rgb(var(--cream-200));
+  }
+  
+  .dark .bg-main {
+    background-color: rgb(var(--dark-base-500));
+  }
+  
+  .bg-surface {
+    background-color: rgb(255 255 255);
+  }
+  
+  .dark .bg-surface {
+    background-color: rgb(var(--dark-surface-500));
+  }
+  
+  .bg-surface-alt {
+    background-color: rgb(var(--beech-300));
+  }
+  
+  .dark .bg-surface-alt {
+    background-color: rgb(var(--dark-surface-700));
+  }
+  
+  .text-main {
+    color: rgb(var(--ebony-500));
+  }
+  
+  .dark .text-main {
+    color: rgb(var(--dark-text-300));
+  }
+  
+  .text-secondary {
+    color: rgb(var(--walnut-500));
+  }
+  
+  .dark .text-secondary {
+    color: rgb(var(--dark-muted-500));
+  }
+  
+  .text-accent {
+    color: rgb(var(--mahogany-500));
+  }
+  
+  .dark .text-accent {
+    color: rgb(var(--dark-accent-500));
+  }
+  
+  .border-main {
+    border-color: rgb(var(--oak-300));
+  }
+  
+  .dark .border-main {
+    border-color: rgb(var(--dark-surface-600));
+  }
+  
+  /* Cartes */
+  .card-main {
+    background-color: rgb(255 255 255);
+    border: 1px solid rgb(var(--oak-200));
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(var(--ebony-500) / 0.1);
+    transition: all 0.2s ease;
+  }
+  
+  .card-main:hover {
+    box-shadow: 0 10px 15px -3px rgb(var(--ebony-500) / 0.1);
+    transform: translateY(-4px);
+  }
+  
+  .dark .card-main {
+    background-color: rgb(var(--dark-surface-500));
+    border-color: rgb(var(--dark-surface-600));
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.25);
+  }
+  
+  .dark .card-main:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+  }
+  
+  /* Boutons */
+  .btn-primary {
+    background-color: rgb(var(--walnut-500));
+    color: rgb(255 255 255);
+    border: 1px solid rgb(var(--mahogany-500));
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(var(--mahogany-500));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px -2px rgb(var(--ebony-500) / 0.2);
+  }
+  
+  .dark .btn-primary {
+    background-color: rgb(var(--dark-accent-500));
+    color: rgb(var(--dark-base-500));
+    border-color: rgb(var(--dark-accent-600));
+  }
+  
+  .dark .btn-primary:hover {
+    background-color: rgb(var(--dark-accent-600));
+    box-shadow: 0 4px 8px -2px rgb(0 0 0 / 0.3);
+  }
+  
+  .btn-secondary {
+    background-color: rgb(var(--oak-300));
+    color: rgb(var(--ebony-500));
+    border: 1px solid rgb(var(--walnut-500));
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgb(var(--beech-300));
+    border-color: rgb(var(--mahogany-500));
+    transform: translateY(-2px);
+  }
+  
+  .dark .btn-secondary {
+    background-color: rgb(var(--dark-surface-700));
+    color: rgb(var(--dark-text-300));
+    border-color: rgb(var(--dark-accent-600));
+  }
+  
+  .dark .btn-secondary:hover {
+    background-color: rgb(var(--dark-surface-600));
+    border-color: rgb(var(--dark-accent-500));
+  }
+  
+  /* Badges */
+  .badge {
+    background-color: rgb(var(--oak-200));
+    color: rgb(var(--ebony-500));
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-block;
+  }
+  
+  .dark .badge {
+    background-color: rgb(var(--dark-surface-600));
+    color: rgb(var(--dark-text-300));
+  }
+  
+  /* Navigation */
+  .nav-container {
+    background-color: rgb(255 255 255 / 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(var(--oak-200) / 0.5);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(var(--ebony-500) / 0.1);
+  }
+  
+  .dark .nav-container {
+    background-color: rgb(var(--dark-surface-500) / 0.95);
+    border-color: rgb(var(--dark-surface-600) / 0.5);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.25);
+  }
+  
+  /* Menu container */
+  .menu-container {
+    background-color: rgb(var(--walnut-500));
+    color: rgb(255 255 255);
+    border: 2px solid rgb(var(--mahogany-500));
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(var(--ebony-500) / 0.1);
+    transition: all 0.2s ease;
+  }
+  
+  .dark .menu-container {
+    background-color: rgb(var(--dark-accent-500));
+    color: rgb(var(--dark-base-500));
+    border-color: rgb(var(--dark-accent-600));
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.25);
+  }
+  
+  /* Icônes de compétences */
+  .skill-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+  
+  .skill-icon-primary {
+    background-color: rgb(var(--walnut-500));
+    color: rgb(255 255 255);
+  }
+  
+  .dark .skill-icon-primary {
+    background-color: rgb(var(--dark-accent-500));
+    color: rgb(var(--dark-base-500));
+  }
+  
+  .skill-icon-secondary {
+    background-color: rgb(var(--oak-300));
+    color: rgb(var(--ebony-500));
+  }
+  
+  .dark .skill-icon-secondary {
+    background-color: rgb(var(--dark-surface-600));
+    color: rgb(var(--dark-text-300));
+  }
+  
+  .skill-icon-tertiary {
+    background-color: rgb(var(--beech-300));
+    color: rgb(var(--mahogany-500));
+  }
+  
+  .dark .skill-icon-tertiary {
+    background-color: rgb(var(--dark-surface-700));
+    color: rgb(var(--dark-accent-500));
+  }
+  
+  /* Zones d'input */
+  .input-main {
+    background-color: rgb(255 255 255);
+    border: 1px solid rgb(var(--oak-300));
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    color: rgb(var(--ebony-500));
+    transition: all 0.2s ease;
+  }
+  
+  .input-main:focus {
+    border-color: rgb(var(--walnut-500));
+    box-shadow: 0 0 0 3px rgb(var(--walnut-500) / 0.1);
+    outline: none;
+  }
+  
+  .dark .input-main {
+    background-color: rgb(var(--dark-surface-600));
+    border-color: rgb(var(--dark-surface-500));
+    color: rgb(var(--dark-text-300));
+  }
+  
+  .dark .input-main:focus {
+    border-color: rgb(var(--dark-accent-500));
+    box-shadow: 0 0 0 3px rgb(var(--dark-accent-500) / 0.1);
+  }
+  
+  /* Container principal */
+  .container-main {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .container-main {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container-main {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  
+  /* Sections */
+  .section-main {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .section-alt {
+    background-color: rgb(var(--cream-100));
+  }
+  
+  .dark .section-alt {
+    background-color: rgb(var(--dark-base-600));
+  }
+  
+  /* Glassmorphism effects */
+  .glass-light {
+    background: rgb(255 255 255 / 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgb(var(--oak-300) / 0.5);
+  }
+  
+  .dark .glass-light {
+    background: rgb(var(--dark-surface-500) / 0.7);
+    border: 1px solid rgb(var(--dark-surface-600) / 0.5);
+  }
+}
+
+/* ========== UTILITAIRES PERSONNALISÉS ========== */
+@layer utilities {
+  /* Animations personnalisées */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+  
+  .animate-glow {
+    animation: glow 2.5s ease-in-out infinite;
+  }
+  
+  /* Shadow utilities avec couleurs personnalisées */
+  .shadow-cream {
+    box-shadow: 0 4px 6px -1px rgb(var(--ebony-500) / 0.1);
+  }
+  
+  .shadow-dark {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.25);
+  }
+  
+  .shadow-glow-cream {
+    box-shadow: 0 0 15px rgb(var(--mahogany-500) / 0.3);
+  }
+  
+  .shadow-glow-dark {
+    box-shadow: 0 0 15px rgb(var(--dark-accent-500) / 0.3);
+  }
+  
+  /* Utilités de transition */
+  .transition-theme {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+}
+
+/* ========== KEYFRAMES ========== */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
   from { 
     opacity: 0; 
     transform: translateY(20px); 
@@ -131,88 +535,24 @@
   }
 }
 
-/* Classes utilitaires personnalisées */
-@utility animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-@utility animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@utility animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out forwards;
-}
-
-@utility animate-slide-in-right {
-  animation: slideInRight 0.6s ease-out forwards;
-}
-
-/* Styles de base */
-@layer base {
-  html {
-    scroll-behavior: smooth;
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgb(var(--mahogany-500) / 0.3);
   }
-  
-  body {
-    font-family: var(--font-family-sans);
-    @apply antialiased;
-  }
-  
-  .font-lobster {
-    font-family: var(--font-family-lobster);
-  }
-  
-  /* Styles d'accessibilité avec adaptation au thème */
-  :focus {
-    outline: none;
-    box-shadow: 0 0 0 2px oklch(var(--color-primary-500)), 0 0 0 4px oklch(var(--color-primary-500) / 0.3);
-  }
-
-  ::selection {
-    background-color: oklch(var(--color-primary-500));
-    color: oklch(var(--color-white));
-  }
-  
-  .dark ::selection {
-    background-color: oklch(var(--color-primary-400));
-    color: oklch(var(--color-white));
+  50% {
+    box-shadow: 0 0 20px rgb(var(--mahogany-500) / 0.6);
   }
 }
 
-/* Configuration du container */
-@layer components {
-  .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+.dark .animate-glow {
+  animation: glow-dark 2.5s ease-in-out infinite;
+}
+
+@keyframes glow-dark {
+  0%, 100% {
+    box-shadow: 0 0 8px rgb(var(--dark-accent-500) / 0.3);
   }
-  
-  /* Classes utilitaires pour les thèmes */
-  .text-adaptive {
-    @apply text-gray-900 dark:text-gray-100;
-  }
-  
-  .bg-adaptive {
-    @apply bg-white dark:bg-gray-800;
-  }
-  
-  .border-adaptive {
-    @apply border-gray-200 dark:border-gray-700;
-  }
-  
-  /* Boutons adaptatifs */
-  .btn-primary {
-    @apply bg-gray-900 hover:bg-gray-800 text-white;
-    @apply dark:bg-primary-500 dark:hover:bg-primary-400;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-100 hover:bg-gray-200 text-gray-900;
-    @apply dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-100;
-  }
-  
-  /* Cards adaptatives */
-  .card {
-    @apply bg-white shadow-md rounded-lg;
-    @apply dark:bg-gray-800 dark:shadow-lg;
+  50% {
+    box-shadow: 0 0 20px rgb(var(--dark-accent-500) / 0.6);
   }
 }

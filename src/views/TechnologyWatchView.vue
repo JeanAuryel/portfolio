@@ -14,11 +14,24 @@ interface TechTool {
   features: string[];
 }
 
+// Helper function pour des images thématiques de qualité
+const getToolImage = (toolName: string) => {
+  const images = {
+    'TLDR Newsletter': 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop&q=80', // Newsletter/Email
+    'daily.dev': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&q=80', // Tech/Dev
+    'Vue.js Official': 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=250&fit=crop&q=80', // Code/Programming
+    'Tailwind CSS': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&q=80', // Design/CSS
+    'JetBrains': 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop&q=80' // IDE/Development
+  };
+  
+  return images[toolName] || `https://picsum.photos/400/250?random=${toolName.length}`;
+};
+
 // État pour la carte active
 const activeCardId = ref<number | null>(null);
 const isLoaded = ref(false);
 
-// Données des outils de veille technologique
+// Données des outils de veille technologique avec images thématiques
 const techTools = ref<TechTool[]>([
   {
     id: 1,
@@ -27,7 +40,7 @@ const techTools = ref<TechTool[]>([
     description: 'Newsletter quotidienne avec les actualités tech essentielles',
     detailedDescription: 'TLDR Newsletter est ma source principale d\'information technologique. Chaque matin, je reçois par email un condensé des actualités les plus importantes du monde tech, startup et développement. Cette newsletter me permet de rester informé des dernières tendances, lancements de produits, et innovations technologiques sans avoir à parcourir de multiples sources.',
     url: 'https://tldr.tech/',
-    image: '/assets/tech-watch/tldr-newsletter.jpg',
+    image: getToolImage('TLDR Newsletter'), // ✅ Image thématique fiable
     icon: '📧',
     lastUpdate: 'Quotidien',
     features: ['Actualités tech condensées', 'Résumés de startups', 'Innovations récentes', 'Tendances du marché']
@@ -39,7 +52,7 @@ const techTools = ref<TechTool[]>([
     description: 'Extension navigateur pour découvrir du contenu dev',
     detailedDescription: 'daily.dev transforme mon nouvel onglet en un hub personnalisé de contenu technique. Cette extension me propose quotidiennement des articles techniques, des tutoriels, et des actualités spécialement sélectionnés selon mes intérêts. J\'y découvre régulièrement de nouveaux frameworks, des bonnes pratiques, et des retours d\'expérience de développeurs du monde entier.',
     url: 'https://daily.dev/',
-    image: '/assets/tech-watch/daily-dev.jpg',
+    image: getToolImage('daily.dev'), // ✅ Image thématique fiable
     icon: '🔧',
     lastUpdate: 'En temps réel',
     features: ['Articles techniques personnalisés', 'Découverte de nouvelles technologies', 'Communauté de développeurs', 'Bookmarks et partage']
@@ -51,7 +64,7 @@ const techTools = ref<TechTool[]>([
     description: 'Documentation et actualités officielles de Vue.js',
     detailedDescription: 'Le site officiel de Vue.js est ma référence principale pour tout ce qui concerne ce framework. Je consulte régulièrement les mises à jour de la documentation, les guides de migration pour les nouvelles versions, et les annonces d\'ecosystem. C\'est essentiellement ici que je découvre les nouvelles fonctionnalités, les changements d\'API, et les bonnes pratiques recommandées par l\'équipe core.',
     url: 'https://vuejs.org/',
-    image: '/assets/tech-watch/vuejs-official.jpg',
+    image: getToolImage('Vue.js Official'), // ✅ Image thématique fiable
     icon: '<svg viewBox="0 0 24 24" class="w-6 h-6 text-green-500"><path fill="currentColor" d="M2 3h3l2 3 2-3h3l-5 8.5L2 3zm7 0h3l2 3 2-3h3l-5 8.5L9 3z"/></svg>',
     lastUpdate: 'Hebdomadaire',
     features: ['Documentation officielle', 'Guides de migration', 'Nouveautés API', 'Ecosystem updates']
@@ -63,19 +76,19 @@ const techTools = ref<TechTool[]>([
     description: 'Documentation et nouvelles fonctionnalités de Tailwind',
     detailedDescription: 'Le site officiel de Tailwind CSS est ma source principale pour suivre l\'évolution de ce framework CSS utility-first. Je consulte régulièrement le blog pour découvrir les nouvelles features, les optimisations de performance, et les outils companion. Les playground interactifs m\'aident également à tester rapidement de nouvelles approches styling.',
     url: 'https://tailwindcss.com/',
-    image: '/assets/tech-watch/tailwindcss.jpg',
+    image: getToolImage('Tailwind CSS'), // ✅ Image thématique fiable
     icon: '<svg viewBox="0 0 24 24" class="w-6 h-6 text-cyan-500"><path fill="currentColor" d="M12 2L3 6v12l9 4 9-4V6l-9-4zm6.93 6L12 15.5 5.07 8H9l3 1.5L15 8h3.93z"/></svg>',
     lastUpdate: 'Mensuel',
     features: ['Nouvelles utilities', 'Playground interactif', 'Optimisations V4', 'Plugins community']
   },
   {
     id: 5,
-    name: 'IntelliJ IDEA',
-    type: 'ide',
-    description: 'IDE principal et ses mises à jour',
-    detailedDescription: 'IntelliJ IDEA est mon environnement de développement principal. Je suis attentivement les mises à jour pour découvrir les nouvelles fonctionnalités, les améliorations de performance, et les nouveaux plugins disponibles. Les releases notes m\'informent des nouvelles intégrations, des améliorations du debugger, et des outils de refactoring qui peuvent considérablement améliorer ma productivité.',
-    url: 'https://www.jetbrains.com/idea/',
-    image: '/assets/tech-watch/intellij.jpg',
+    name: 'JetBrains',
+    type: 'site-officiel',
+    description: 'Documentation sur Kotlin, IntelliJ IDEA et Android Studio',
+    detailedDescription: 'JetBrains est l\'éditeur de mes outils de développement favoris. Je suis attentivement les mises à jour d\'IntelliJ IDEA, les nouveautés Kotlin, et les améliorations d\'Android Studio. Les releases notes m\'informent des nouvelles intégrations, des améliorations du debugger, et des outils de refactoring qui peuvent considérablement améliorer ma productivité.',
+    url: 'https://www.jetbrains.com/',
+    image: getToolImage('JetBrains'), // ✅ Image thématique fiable
     icon: '<svg viewBox="0 0 24 24" class="w-6 h-6 text-blue-600"><path fill="currentColor" d="M21 12l-7-7v4H3v6h11v4l7-7zM10 9H6v6h4V9z"/></svg>',
     lastUpdate: 'Trimestriel',
     features: ['Nouvelles fonctionnalités IDE', 'Plugins récents', 'Améliorations debugger', 'Intégrations modernes']
@@ -85,12 +98,12 @@ const techTools = ref<TechTool[]>([
 // Types de badges colorés selon la catégorie
 const getTypeColor = (type: string) => {
   const colors = {
-    'newsletter': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-    'extension': 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-    'site-officiel': 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
-    'ide': 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200'
+    'newsletter': 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-200',
+    'extension': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-200',
+    'site-officiel': 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-200',
+    'ide': 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-200'
   };
-  return colors[type as keyof typeof colors] || 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
+  return colors[type as keyof typeof colors] || 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200';
 };
 
 // Activer/désactiver une carte
@@ -243,10 +256,12 @@ onMounted(() => {
             <!-- Partie droite - Image et lien -->
             <div class="image-section">
               <div class="image-container">
+                <!-- ✅ Image thématique de qualité -->
                 <img 
                   :src="tool.image" 
                   :alt="tool.name" 
                   class="w-full h-full object-cover rounded-lg"
+                  loading="lazy"
                 />
                 <div class="image-overlay">
                   <button 
@@ -269,16 +284,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Configuration du mode sombre pour Tailwind CSS 4 */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
-}
-
 /* Cartes des outils de veille */
 .tech-tool-card {
-  background-color: oklch(var(--color-white));
+  background-color: white;
   border-radius: 16px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -287,8 +295,8 @@ onMounted(() => {
   transform-origin: center;
 }
 
-:root.dark .tech-tool-card {
-  background-color: oklch(var(--color-gray-800));
+.dark .tech-tool-card {
+  background-color: rgb(31 41 55);
 }
 
 .tech-tool-card:hover {
@@ -354,7 +362,6 @@ onMounted(() => {
   height: 250px;
   border-radius: 12px;
   overflow: hidden;
-  group: true;
 }
 
 @media (min-width: 1024px) {
@@ -382,8 +389,8 @@ onMounted(() => {
 .visit-button {
   display: flex;
   align-items: center;
-  background: oklch(var(--color-white));
-  color: oklch(var(--color-gray-800));
+  background: white;
+  color: rgb(55 65 81);
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
   font-weight: 600;

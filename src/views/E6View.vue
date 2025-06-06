@@ -107,7 +107,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="flex-grow pt-20 pb-16 relative">
+  <main class="flex-grow pt-20 pb-16 relative bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
       <!-- Header -->
       <div 
@@ -150,7 +150,9 @@ onMounted(() => {
             <div class="flex flex-col sm:flex-row gap-3">
               <button 
                 @click="openDocumentation(project.technicalDocUrl)"
-                :class="`flex items-center px-4 py-2 bg-${project.mainColor}-500 text-white rounded-lg hover:bg-${project.mainColor}-600 transition-colors shadow-lg`"
+                :class="`flex items-center px-4 py-2 rounded-lg transition-colors shadow-lg text-white ${
+                  project.mainColor === 'blue' ? 'bg-blue-500 hover:bg-blue-600' : 'bg-purple-500 hover:bg-purple-600'
+                }`"
               >
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
@@ -160,7 +162,9 @@ onMounted(() => {
               </button>
               <button 
                 @click="openDocumentation(project.functionalDocUrl)"
-                :class="`flex items-center px-4 py-2 bg-${project.mainColor}-500 text-white rounded-lg hover:bg-${project.mainColor}-600 transition-colors shadow-lg`"
+                :class="`flex items-center px-4 py-2 rounded-lg transition-colors shadow-lg text-white ${
+                  project.mainColor === 'blue' ? 'bg-blue-500 hover:bg-blue-600' : 'bg-purple-500 hover:bg-purple-600'
+                }`"
               >
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6z" clip-rule="evenodd"/>
@@ -173,7 +177,7 @@ onMounted(() => {
           <!-- Contenu du projet -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Galerie d'images -->
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
               <div class="relative aspect-video">
                 <!-- Image principale -->
                 <img 
@@ -223,7 +227,7 @@ onMounted(() => {
                     @click="goToImage(project.id, index)"
                     :class="`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-colors ${
                       activeImageIndex[project.id] === index 
-                        ? `border-${project.mainColor}-500` 
+                        ? (project.mainColor === 'blue' ? 'border-blue-500' : 'border-purple-500')
                         : 'border-gray-200 dark:border-gray-600'
                     }`"
                   >
@@ -234,7 +238,7 @@ onMounted(() => {
             </div>
             
             <!-- Description et technologies -->
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-100 dark:border-gray-700">
               <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">
                 Description détaillée
               </h3>
@@ -251,7 +255,11 @@ onMounted(() => {
                   <span
                     v-for="tech in project.technologies"
                     :key="tech"
-                    :class="`inline-block px-3 py-1 rounded-full text-sm font-medium bg-${project.mainColor}-100 dark:bg-${project.mainColor}-900 text-${project.mainColor}-800 dark:text-${project.mainColor}-200`"
+                    :class="`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+                      project.mainColor === 'blue' 
+                        ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200'
+                        : 'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200'
+                    }`"
                   >
                     {{ tech }}
                   </span>

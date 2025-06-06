@@ -16,8 +16,7 @@ export interface NavigationMenuProps {
 }
 
 withDefaults(defineProps<NavigationMenuProps>(), {
-  fixed: true,
-  brandName: 'Portfolio'
+  fixed: true
 });
 
 // Définition des icônes comme composants Vue
@@ -195,15 +194,9 @@ onUnmounted(() => {
     ]"
   >
     <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo / Brand -->
-        <router-link to="/" class="flex items-center space-x-3 text-xl font-bold">
-          <img v-if="logo" :src="logo" :alt="brandName" class="h-8 w-8" />
-          <span class="text-gray-900 dark:text-gray-100">{{ brandName }}</span>
-        </router-link>
-        
-        <!-- Desktop Menu avec icônes SVG -->
-        <div class="hidden md:flex items-center space-x-8">
+      <div class="flex items-center justify-center h-16">
+        <!-- Desktop Menu avec icônes SVG (centré) -->
+        <div class="flex items-center space-x-8">
           <router-link
             v-for="item in items"
             :key="item.path"
@@ -236,7 +229,7 @@ onUnmounted(() => {
         <!-- Mobile Menu Button -->
         <button
           @click="isMobileMenuOpen = !isMobileMenuOpen"
-          class="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          class="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors absolute right-4"
         >
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path 
@@ -300,7 +293,7 @@ onUnmounted(() => {
   transition: transform 0.2s ease;
 }
 
-/* Indicateur actif pour les icônes avec syntaxe OKLCH */
+/* Indicateur actif pour les icônes */
 .nav-icon-link.active::after {
   content: '';
   position: absolute;
@@ -309,20 +302,12 @@ onUnmounted(() => {
   transform: translateX(-50%);
   width: 6px;
   height: 6px;
-  background-color: oklch(var(--color-blue-600));
+  background-color: rgb(var(--mahogany-500));
   border-radius: 50%;
 }
 
-:root.dark .nav-icon-link.active::after {
-  background-color: oklch(var(--color-blue-400));
-}
-
 .nav-icon-link.active svg {
-  color: oklch(var(--color-blue-600));
-}
-
-:root.dark .nav-icon-link.active svg {
-  color: oklch(var(--color-blue-400));
+  color: rgb(var(--mahogany-500));
 }
 
 /* Transitions pour les menus */
@@ -347,16 +332,6 @@ onUnmounted(() => {
 .label-fade-leave-to {
   opacity: 0;
   transform: translateY(-10px);
-}
-
-/* Mode sombre pour les tooltips */
-:root.dark .bg-gray-900 {
-  background-color: oklch(var(--color-gray-100));
-  color: oklch(var(--color-gray-900));
-}
-
-:root.dark .bg-gray-900::after {
-  background-color: oklch(var(--color-gray-100));
 }
 
 /* Responsive adjustments pour desktop uniquement */

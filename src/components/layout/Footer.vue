@@ -15,6 +15,7 @@ export interface FooterProps {
 }
 
 withDefaults(defineProps<FooterProps>(), {
+  name: 'Jean-Auryel Akinotcho',
   year: new Date().getFullYear(),
   showBackToTop: true
 });
@@ -25,29 +26,29 @@ const scrollToTop = () => {
 </script>
 
 <template>
-  <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-    <div class="container mx-auto px-4 py-8">
+  <footer class="bg-surface border-t border-main transition-theme">
+    <div class="container-main py-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Informations principales -->
         <div>
-          <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+          <h3 class="text-lg font-bold text-main mb-4">
             {{ name }}
           </h3>
-          <p class="text-gray-600 dark:text-gray-400">
+          <p class="text-secondary">
             Portfolio développé avec Vue.js 3, TypeScript et Tailwind CSS
           </p>
         </div>
         
         <!-- Liens rapides -->
         <div v-if="links && links.length">
-          <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+          <h3 class="text-lg font-bold text-main mb-4">
             Liens rapides
           </h3>
           <ul class="space-y-2">
             <li v-for="link in links" :key="link.name">
               <a 
                 :href="link.url"
-                class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                class="text-secondary hover:text-accent transition-colors"
               >
                 {{ link.name }}
               </a>
@@ -57,7 +58,7 @@ const scrollToTop = () => {
         
         <!-- Réseaux sociaux -->
         <div v-if="socialLinks && socialLinks.length">
-          <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+          <h3 class="text-lg font-bold text-main mb-4">
             Suivez-moi
           </h3>
           <div class="flex space-x-4">
@@ -67,7 +68,7 @@ const scrollToTop = () => {
               :href="social.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              class="text-secondary hover:text-accent transition-colors"
               :title="social.name"
             >
               <span class="text-2xl">{{ social.icon }}</span>
@@ -77,9 +78,9 @@ const scrollToTop = () => {
       </div>
       
       <!-- Copyright -->
-      <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8">
+      <div class="border-t border-main mt-8 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-600 dark:text-gray-400 text-sm">
+          <p class="text-secondary text-sm">
             © {{ year }} {{ name }}. Tous droits réservés.
           </p>
           
@@ -87,7 +88,7 @@ const scrollToTop = () => {
           <button 
             v-if="showBackToTop"
             @click="scrollToTop"
-            class="mt-4 md:mt-0 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            class="mt-4 md:mt-0 skill-icon skill-icon-secondary hover:shadow-glow-cream dark:hover:shadow-glow-dark transition-all"
             title="Retour en haut"
           >
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
