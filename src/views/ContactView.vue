@@ -316,26 +316,6 @@ onMounted(() => {
           </form>
         </div>
       </div>
-      
-      <!-- Carte Google Maps -->
-      <div 
-        class="mt-16 card-main overflow-hidden"
-        :class="{ 'opacity-100': isLoaded, 'opacity-0': !isLoaded }"
-        style="transition: opacity 0.7s ease-in-out 0.6s;"
-      >
-        <h2 class="text-2xl font-bold mb-6 text-main">Me localiser</h2>
-        <div class="h-96 rounded-lg overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92456.79993306943!2d1.3628366946728498!3d43.60080590000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2sToulouse!5e0!3m2!1sfr!2sfr!4v1651507452969!5m2!1sfr!2sfr"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
     </div>
   </main>
 </template>

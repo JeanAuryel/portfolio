@@ -173,7 +173,7 @@ const currentRoute = computed(() => router.currentRoute.value.path);
   margin-bottom: 4px;
 }
 
-/* Texte qui apparaît au hover (utilise ::after) */
+/* Texte qui apparaît au hover (rétabli) */
 .glassmorphism-wrapper :deep(.nav-icon-link)::after {
   content: attr(data-name);
   position: absolute;
@@ -196,11 +196,16 @@ const currentRoute = computed(() => router.currentRoute.value.path);
   color: rgb(var(--dark-accent-400));
 }
 
-/* Effet hover - icônes plus petites et texte visible */
+/* Effet hover - SANS background/barre, juste icône et texte */
+.glassmorphism-wrapper :deep(.nav-icon-link:hover) {
+  background: none !important;
+  transform: none !important;
+}
+
 .glassmorphism-wrapper :deep(.nav-icon-link:hover) svg {
-  width: 18px;
-  height: 18px;
-  transform: scale(0.9);
+  width: 22px;
+  height: 22px;
+  transform: scale(0.95);
   color: rgb(var(--mahogany-500));
 }
 
@@ -364,7 +369,7 @@ const currentRoute = computed(() => router.currentRoute.value.path);
   }
 }
 
-/* JavaScript pour ajouter les data-name aux liens */
+/* Définitions de contenu pour le texte au hover */
 .glassmorphism-wrapper :deep(.nav-icon-link[href="/"])::after { content: "Accueil"; }
 .glassmorphism-wrapper :deep(.nav-icon-link[href="/about"])::after { content: "À propos"; }
 .glassmorphism-wrapper :deep(.nav-icon-link[href="/e5"])::after { content: "E5"; }
