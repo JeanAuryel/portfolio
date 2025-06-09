@@ -206,7 +206,7 @@ onUnmounted(() => {
             @mouseenter="handleMouseEnter(item.path)"
             @mouseleave="handleMouseLeave"
           >
-            <div class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+            <div class="text-secondary hover:text-accent transition-colors duration-200">
               <component :is="getIconComponent(item)" />
             </div>
             
@@ -216,10 +216,10 @@ onUnmounted(() => {
                 v-if="hoveredItem === item.path"
                 class="absolute top-full mt-2 whitespace-nowrap"
               >
-                <div class="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-3 py-1.5 rounded-lg text-sm font-medium shadow-lg">
+                <div class="bg-surface text-main px-3 py-1.5 rounded-lg text-sm font-medium shadow-cream border border-main">
                   {{ item.name }}
                   <!-- Petite flèche vers le haut -->
-                  <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-100 rotate-45"></div>
+                  <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-surface border-l border-t border-main rotate-45"></div>
                 </div>
               </div>
             </Transition>
@@ -229,7 +229,7 @@ onUnmounted(() => {
         <!-- Mobile Menu Button -->
         <button
           @click="isMobileMenuOpen = !isMobileMenuOpen"
-          class="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors absolute right-4"
+          class="md:hidden p-2 rounded-md text-secondary hover:text-main hover:bg-gray-100 transition-colors absolute right-4"
         >
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path 
@@ -254,15 +254,15 @@ onUnmounted(() => {
       <Transition name="mobile-menu">
         <div 
           v-if="isMobileMenuOpen" 
-          class="md:hidden py-4 border-t border-gray-200 dark:border-gray-700"
+          class="md:hidden py-4 border-t border-main"
         >
           <div class="flex flex-col space-y-2">
             <router-link
               v-for="item in items"
               :key="item.path"
               :to="item.path"
-              class="mobile-nav-link flex items-center px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors duration-200"
-              :class="{ 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20': route.path === item.path }"
+              class="mobile-nav-link flex items-center px-3 py-2 rounded-md text-secondary hover:text-accent hover:bg-gray-100 font-medium transition-colors duration-200"
+              :class="{ 'text-accent bg-surface-alt': route.path === item.path }"
             >
               <div class="mr-3">
                 <component :is="getIconComponent(item)" class="w-5 h-5" />
@@ -284,13 +284,17 @@ onUnmounted(() => {
 }
 
 .nav-icon-link:hover {
-  transform: translateY(-2px);
+  /* Suppression du transform qui pourrait créer une ombre */
+  /* transform: translateY(-2px); */
   transition: transform 0.2s ease;
 }
 
 .nav-icon-link:hover svg {
   transform: scale(1.1);
   transition: transform 0.2s ease;
+  /* Suppression explicite de toute ombre */
+  box-shadow: none !important;
+  filter: none !important;
 }
 
 /* Indicateur actif pour les icônes */
@@ -308,6 +312,14 @@ onUnmounted(() => {
 
 .nav-icon-link.active svg {
   color: rgb(var(--mahogany-500));
+}
+
+.dark .nav-icon-link.active::after {
+  background-color: rgb(var(--dark-accent-500));
+}
+
+.dark .nav-icon-link.active svg {
+  color: rgb(var(--dark-accent-500));
 }
 
 /* Transitions pour les menus */

@@ -28,7 +28,7 @@ onMounted(() => {
         <!-- Avatar et nom -->
         <div class="flex flex-col md:flex-row items-center justify-center mb-10">
           <div class="w-48 h-48 rounded-full overflow-hidden mb-6 md:mb-0 md:mr-8 border-4 border-primary-600 dark:border-primary-400 shadow-lg">
-            <img :src="ProfilePicture" alt="Jean-Auryel Akinotcho" class="w-full h-50 object-cover" />
+            <img :src="ProfilePicture" alt="Jean-Auryel Akinotcho" class="w-full h-55 object-cover" />
           </div>
           <div class="text-center md:text-left">
             <h2 class="text-3xl font-bold mb-2 text-main">Jean-Auryel Akinotcho</h2>

@@ -79,7 +79,21 @@ const currentRoute = computed(() => router.currentRoute.value.path);
     </main>
     
     <!-- Footer -->
-    <Footer />
+    <Footer 
+      name="Jean-Auryel Akinotcho"
+      :year="2024"
+      :show-back-to-top="true"
+      :social-links="[
+        { name: 'LinkedIn', url: 'https://linkedin.com/in/jean-auryel-akinotcho', icon: '💼' },
+        { name: 'GitHub', url: 'https://github.com/jean-auryel', icon: '🔗' },
+        { name: 'Email', url: 'mailto:jeanauryel.akinotcho@gmail.com', icon: '📧' }
+      ]"
+      :links="[
+        { name: 'Accueil', url: '/' },
+        { name: 'À propos', url: '/about' },
+        { name: 'Contact', url: '/contact' }
+      ]"
+    />
   </div>
 </template>
 
@@ -171,6 +185,10 @@ const currentRoute = computed(() => router.currentRoute.value.path);
   height: 24px;
   transition: all 0.3s ease;
   margin-bottom: 4px;
+  /* Suppression explicite de toute ombre par défaut */
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
 }
 
 /* Texte qui apparaît au hover (rétabli) */
@@ -200,6 +218,8 @@ const currentRoute = computed(() => router.currentRoute.value.path);
 .glassmorphism-wrapper :deep(.nav-icon-link:hover) {
   background: none !important;
   transform: none !important;
+  /* Suppression explicite de toute ombre au hover */
+  box-shadow: none !important;
 }
 
 .glassmorphism-wrapper :deep(.nav-icon-link:hover) svg {
@@ -207,6 +227,10 @@ const currentRoute = computed(() => router.currentRoute.value.path);
   height: 22px;
   transform: scale(0.95);
   color: rgb(var(--mahogany-500));
+  /* Suppression explicite de toute ombre sur l'icône */
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
 }
 
 .dark .glassmorphism-wrapper :deep(.nav-icon-link:hover) svg {
@@ -218,17 +242,17 @@ const currentRoute = computed(() => router.currentRoute.value.path);
   transform: translateX(-50%) translateY(0px);
 }
 
-/* État actif - icône plus grande et accent */
+/* État actif - icône plus grande et accent SANS OMBRE */
 .glassmorphism-wrapper :deep(.nav-icon-link.active) svg {
   color: rgb(var(--mahogany-500));
   width: 28px;
   height: 28px;
-  filter: drop-shadow(0 0 8px rgb(var(--mahogany-500) / 0.5));
+  /* OMBRE SUPPRIMÉE : filter: drop-shadow(...); */
 }
 
 .dark .glassmorphism-wrapper :deep(.nav-icon-link.active) svg {
   color: rgb(var(--dark-accent-400));
-  filter: drop-shadow(0 0 8px rgb(var(--dark-accent-400) / 0.5));
+  /* OMBRE SUPPRIMÉE : filter: drop-shadow(...); */
 }
 
 /* Cercle indicateur au-dessus de l'icône active (utilise ::before) */
