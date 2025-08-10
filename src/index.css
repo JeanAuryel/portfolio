@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import "tailwindcss";
+@plugin "tailwind-scrollbar";
+
+
+@theme{
+    --font-inter: Inter, sans-serif
+    --font-goldman: Goldman, sans-serif
+    --font-Knewave: Knewave, sans-serif 
+    --color-cream: #fbede0
+    --color-dark: #18181b
+}
+
+@layer base {
+    html{
+        scroll-behavior: smooth;
+    }
+
+    body{
+        @apply bg-[#fbede0] text-[#18181b]
+    }
+
+    .materials-symbols-rounded {
+        font-family: 'Material Symbols Rounded';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+    }
+
+}
+
+
+@layer components {
+    /* Menu btn */
+    .menu-btn {
+        @apply w-10 h-10 grid place-items-center bg-[#060d0e]/10 rounded-xl ring-inset ring-1 ring-[#060d0e]/20 backdrop-blur-2xl hover:bg-[#060d0e]/20 transition-[transform,background-color] active:scale-95;
+    }
+
+    /* Navigation links */
+    .nav-link {
+        @apply grid items-center h-9 text-sm font-medium px-4 tracking-wide rounded-lg transition-colors hover:text-[#060d0e]/80;
+    }
+
+    .nav-link.active {
+        @apply text-[#060d0e] bg-[#060d0e]/5;
+    }
+
+    /* Navbar */
+    .navbar {
+        @apply absolute top-full mt-2 right-0 min-w-40 bg-[#fbede0] p-2 rounded-2xl ring-inset ring-1 ring-[#060d0e]/10 scale-90 isolate blur-sm opacity-0 invisible transition-[opacity,transform,filter] md:static md:flex md:items-center md:mt-0 md:p-0 md:bg-transparent md:shadow-none md:ring-0 md:opacity-100 md:visible md:scale-100 md:blur-none backdrop-blur-2xl;
+    }
+
+    .navbar.active {
+        @apply opacity-100 visible scale-100 blur-none;
+    }
+
+    .navbar .active-box {
+        @apply absolute top-2 left-2 right-2 h-9 bg-[#060d0e]/10 rounded-lg duration-500 transition-[top,left] z-[-1] hidden md:block;
+    }
+
+    .btn {
+       @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-[#fbede0]/5 ring-inset transition-[background-color];
+    } 
+
+    .btn-primary {
+        @apply bg-[#060d0e] text-[#fbede0] hover:bg-[#060d0e]/80 active:bg-[#060d0e]/90;
+    }
+
+    .btn-outline {
+        @apply h-11 bg-[#f7d1ae] text-[#060d0e] hover:bg-[#f7a456]/50 active:bg-[#fbede0]/80;
+    }
+
+
+    .btn .material-symbols-rounded {
+        @apply text-[18px];
+    }
+
+    .btn:has( .material-symbols-rounded) {
+        @apply pr-3;
+    }
+    
+
+}
+
+@layer utilities {
+    .material-symbols-rounded {
+        @apply w-[1em] h-[1em] overflow-hidden;
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+
+    .container {
+        @apply px-4 mx-auto lg:px-8 xl:max-w-6xl;
+    }
+
+    .img-box{
+        @apply bg-[#060d0e] rounded-xl overflow-hidden;
+    }
+
+    .img-cover {
+        @apply object-cover;
+    }
+
+    .headline-1,
+    .headline-2 {
+        @apply max-w-max;
+        background: -webkit-linear-gradient(0deg, #060d0e, #9ca3af);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .headline-1 {
+        @apply text-5xl leading-tight font-semibold lg:text-[55px] lg:leading-[1.15];
+    }
+
+    .headline-2 {
+        @apply text-3xl lg:text-4xl lg:leading-tight font-semibold;
+    }
+
+    .section {
+        @apply py-20 lg:py-24;
+    }
+
+    .reveal-up {
+        @apply transform translate-y-4 opacity-0 transition-all duration-700 ease-out;
+    }
+
+    .reveal-up.revealed {
+        @apply translate-y-0 opacity-100;
+    }
+
+    .title-1 {
+        @apply text-lg font-semibold text-[#060d0e];
+    }
+
+    .btn-sm {
+        @apply h-8 text-xs px-3;
+    }
+
+    /* Modal animations */
+    .animate-zoom-in {
+        animation: zoomIn 0.3s ease-out;
+    }
+
+    @keyframes zoomIn {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+}
