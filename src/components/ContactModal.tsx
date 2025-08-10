@@ -45,25 +45,62 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('🚀 Modal form submission started');
+    console.log('📝 Form data:', formData);
+    
+    // Validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      console.error('❌ Missing required fields');
+      setSubmitStatus('error');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
-      // Simuler l'envoi du formulaire
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      console.log('📤 Sending to Formspree from modal...');
       
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Fermer le modal après 2 secondes
-      setTimeout(() => {
-        onClose();
-        setSubmitStatus('idle');
-      }, 2000);
+      // Create FormData manually for better control
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+
+      const response = await fetch('https://formspree.io/f/mvgqvkyp', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      console.log('📨 Modal response received:', {
+        status: response.status,
+        statusText: response.statusText,
+        ok: response.ok
+      });
+
+      if (response.ok) {
+        console.log('✅ Modal form submitted successfully!');
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        
+        // Fermer le modal après 3 secondes
+        setTimeout(() => {
+          onClose();
+          setSubmitStatus('idle');
+        }, 3000);
+      } else {
+        console.error('❌ Modal form error');
+        setSubmitStatus('error');
+      }
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error('💥 Modal form network error:', error);
       setSubmitStatus('error');
     } finally {
+      console.log('🏁 Modal form submission finished');
       setIsSubmitting(false);
     }
   };
@@ -190,7 +227,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               onClick={onClose}
               className="px-6 py-3 rounded-xl border border-[#060d0e]/20 hover:bg-[#060d0e]/5 transition-colors"
             >
-              Annuler
+              {t('common.cancel') || 'Annuler'}
             </button>
           </div>
         </form>

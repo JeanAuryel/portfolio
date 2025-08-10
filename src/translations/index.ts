@@ -156,6 +156,7 @@ export interface Translations {
   };
   common: {
     contactMe: string;
+    cancel: string;
   };
 }
 
@@ -312,7 +313,8 @@ const translations: Record<'en' | 'fr', Translations> = {
       contact: "Contact"
     },
     common: {
-      contactMe: "Contact Me"
+      contactMe: "Contact Me",
+      cancel: "Cancel"
     }
   },
   fr: {
@@ -467,7 +469,8 @@ const translations: Record<'en' | 'fr', Translations> = {
       contact: "Contact"
     },
     common: {
-      contactMe: "Me Contacter"
+      contactMe: "Me Contacter",
+      cancel: "Annuler"
     }
   }
 };
