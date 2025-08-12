@@ -59,7 +59,7 @@ const Hero = () => {
             <div className="hidden lg:block">
                 <figure className="w-full max-w-[480px] ml-auto bg-gradient-to-t from-amber-600 via-25% via-amber-600/40 to-65% rounded-[60px] overflow-hidden">
                     <img 
-                    src="/images/hero-banner.png"
+                    src="/images/hero-banner-2.png"
                     width={656}
                     height={800}
                     alt="Jean Auryel"

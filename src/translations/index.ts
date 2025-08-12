@@ -156,7 +156,6 @@ export interface Translations {
   };
   common: {
     contactMe: string;
-    cancel: string;
   };
 }
 
@@ -313,14 +312,13 @@ const translations: Record<'en' | 'fr', Translations> = {
       contact: "Contact"
     },
     common: {
-      contactMe: "Contact Me",
-      cancel: "Cancel"
+      contactMe: "Contact Me"
     }
   },
   fr: {
     hero: {
       availableForWork: "Disponible pour travailler",
-      headline: "Créons Ensemble Des Sites Web Modernes et Évolutifs pour l'Avenir",
+      headline: "Créons Des Sites Web Modernes et Évolutifs",
       downloadCV: "Télécharger CV",
       viewPortfolio: "Voir le Portfolio"
     },
@@ -469,8 +467,7 @@ const translations: Record<'en' | 'fr', Translations> = {
       contact: "Contact"
     },
     common: {
-      contactMe: "Me Contacter",
-      cancel: "Annuler"
+      contactMe: "Me Contacter"
     }
   }
 };
