@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
-@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
 @import "tailwindcss";
 @plugin "tailwind-scrollbar";
 
@@ -11,6 +11,7 @@
     --font-inter: Inter, sans-serif
     --font-goldman: Goldman, sans-serif
     --font-Knewave: Knewave, sans-serif 
+    --font-megrim: megrim, sans-serif
     --color-cream: #fbede0
     --color-dark: #18181b
 }
@@ -118,6 +119,7 @@
         background: -webkit-linear-gradient(0deg, #060d0e, #9ca3af);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        font-family: 'goldman', sans-serif;
     }
 
     .headline-1 {

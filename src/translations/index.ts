@@ -318,7 +318,7 @@ const translations: Record<'en' | 'fr', Translations> = {
   fr: {
     hero: {
       availableForWork: "Disponible pour travailler",
-      headline: "Créons Des Sites Web Modernes et Évolutifs",
+      headline: "Créons Des Sites Web Modernes et Évolutifs ",
       downloadCV: "Télécharger CV",
       viewPortfolio: "Voir le Portfolio"
     },
