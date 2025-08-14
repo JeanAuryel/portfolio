@@ -26,7 +26,7 @@ const About = () => {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <img 
-                                src="/images/jean-auryel.png" 
+                                src="/images/ja-hero.png" 
                                 alt="Jean-Auryel" 
                                 className="rounded-2xl shadow-lg w-full max-w-md mx-auto"
                             />
