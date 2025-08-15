@@ -58,7 +58,7 @@ const About = () => {
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="text-center">
                             <div className="w-16 h-16 bg-[#060d0e]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">�</span>
+                                <span className="text-2xl">🖥️📱</span>
                             </div>
                             <h3 className="text-lg font-semibold mb-2">{t('about.frontend')}</h3>
                             <p className="text-sm text-[#060d0e]/70">{t('about.frontendDesc')}</p>
@@ -66,7 +66,7 @@ const About = () => {
                         
                         <div className="text-center">
                             <div className="w-16 h-16 bg-[#060d0e]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">�</span>
+                                <span className="text-2xl">🖧🗄️</span>
                             </div>
                             <h3 className="text-lg font-semibold mb-2">{t('about.backend')}</h3>
                             <p className="text-sm text-[#060d0e]/70">{t('about.backendDesc')}</p>
@@ -74,7 +74,7 @@ const About = () => {
                         
                         <div className="text-center">
                             <div className="w-16 h-16 bg-[#060d0e]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">=�</span>
+                                <span className="text-2xl">🛠️🧰</span>
                             </div>
                             <h3 className="text-lg font-semibold mb-2">{t('about.tools')}</h3>
                             <p className="text-sm text-[#060d0e]/70">{t('about.toolsDesc')}</p>
@@ -92,17 +92,17 @@ const About = () => {
                         
                         <div className="grid md:grid-cols-3 gap-8 mt-12">
                             <div>
-                                <div className="text-3xl mb-4">�</div>
+                                <div className="text-3xl mb-4">👤💬</div>
                                 <h3 className="font-semibold mb-2">{t('about.userCentered')}</h3>
                                 <p className="text-sm text-[#060d0e]/70">{t('about.userCenteredDesc')}</p>
                             </div>
                             <div>
-                                <div className="text-3xl mb-4">='</div>
+                                <div className="text-3xl mb-4">✨📈</div>
                                 <h3 className="font-semibold mb-2">{t('about.cleanScalable')}</h3>
                                 <p className="text-sm text-[#060d0e]/70">{t('about.cleanScalableDesc')}</p>
                             </div>
                             <div>
-                                <div className="text-3xl mb-4">=�</div>
+                                <div className="text-3xl mb-4">🚀💡</div>
                                 <h3 className="font-semibold mb-2">{t('about.innovationDriven')}</h3>
                                 <p className="text-sm text-[#060d0e]/70">{t('about.innovationDrivenDesc')}</p>
                             </div>
