@@ -6,6 +6,7 @@
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useLanguage } from "../contexts/LanguageContext";
+import LanguageSelector from "./LanguageSelector";
 
 const Navbar = ({navOpen, onNavClick}: {navOpen?: boolean, onNavClick?: () => void}) => {
     const location = useLocation();
@@ -54,6 +55,13 @@ const Navbar = ({navOpen, onNavClick}: {navOpen?: boolean, onNavClick?: () => vo
                 </Link>
             ))
         }
+        
+        {/* Afficher les drapeaux uniquement sur mobile dans le menu */}
+        <div className="md:hidden border-t border-zinc-300 pt-4 mt-4">
+            <div className="flex items-center justify-center">
+                <LanguageSelector />
+            </div>
+        </div>
     </nav>
   );
 };
