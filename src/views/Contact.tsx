@@ -122,14 +122,14 @@ const Contact = () => {
         },
         {
             icon: 'location_on',
-            label: 'Location',
-            value: 'Available for Remote Work',
+            label: 'Localisation',
+            value: 'Disponible pour le travail à distance',
             href: ''
         },
         {
             icon: 'schedule',
-            label: 'Response Time',
-            value: 'Usually within 24 hours',
+            label: 'Temps de réponse',
+            value: 'Généralement sous 24 heures',
             href: ''
         }
     ];
@@ -294,7 +294,7 @@ const Contact = () => {
 
                         {/* Social Links */}
                         <div className="bg-[#060d0e]/5 rounded-2xl p-6">
-                            <h3 className="text-lg font-semibold mb-6">Connect with me</h3>
+                            <h3 className="text-lg font-semibold mb-6">Connectez-vous avec moi</h3>
                             <div className="space-y-3">
                                 {socialLinks.map((social, index) => (
                                     <a
@@ -320,10 +320,10 @@ const Contact = () => {
                         <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200">
                             <div className="flex items-center gap-2 mb-3">
                                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                                <span className="text-sm font-medium text-green-800">Available for new projects</span>
+                                <span className="text-sm font-medium text-green-800">Disponible pour de nouveaux projets</span>
                             </div>
                             <p className="text-sm text-[#060d0e]/70">
-                                Currently accepting new projects and collaborations. Let's build something amazing together!
+                                J'accepte actuellement de nouveaux projets et collaborations. Construisons quelque chose d'incroyable ensemble !
                             </p>
                         </div>
                     </div>
@@ -333,29 +333,29 @@ const Contact = () => {
                 <section className="py-20">
                     <div className="max-w-3xl mx-auto">
                         <div className="text-center mb-12">
-                            <h2 className="headline-2 mb-4">Frequently Asked Questions</h2>
-                            <p className="text-[#060d0e]/70">Quick answers to common questions</p>
+                            <h2 className="headline-2 mb-4">Questions fréquemment posées</h2>
+                            <p className="text-[#060d0e]/70">Réponses rapides aux questions courantes</p>
                         </div>
 
                         <div className="space-y-6">
                             <div className="bg-[#060d0e]/5 rounded-2xl p-6">
-                                <h3 className="font-semibold mb-2">What's your typical project timeline?</h3>
-                                <p className="text-[#060d0e]/70">Project timelines vary based on complexity, but most websites take 2-6 weeks from start to finish. I'll provide a detailed timeline during our initial consultation.</p>
+                                <h3 className="font-semibold mb-2">Quel est votre délai de projet typique ?</h3>
+                                <p className="text-[#060d0e]/70">Les délais de projet varient selon la complexité, mais la plupart des sites web prennent 2 à 6 semaines du début à la fin. Je fournirai un calendrier détaillé lors de notre consultation initiale.</p>
                             </div>
 
                             <div className="bg-[#060d0e]/5 rounded-2xl p-6">
-                                <h3 className="font-semibold mb-2">Do you work with international clients?</h3>
-                                <p className="text-[#060d0e]/70">Absolutely! I work with clients worldwide and am comfortable with different time zones. Most communication happens via email and video calls.</p>
+                                <h3 className="font-semibold mb-2">Travaillez-vous avec des clients internationaux ?</h3>
+                                <p className="text-[#060d0e]/70">Absolument ! Je travaille avec des clients du monde entier et je suis à l'aise avec différents fuseaux horaires. La plupart des communications se font par email et appels vidéo.</p>
                             </div>
 
                             <div className="bg-[#060d0e]/5 rounded-2xl p-6">
-                                <h3 className="font-semibold mb-2">What information should I include in my project inquiry?</h3>
-                                <p className="text-[#060d0e]/70">Please include your project goals, timeline, budget range, and any specific features you need. The more details you provide, the better I can understand your needs.</p>
+                                <h3 className="font-semibold mb-2">Quelles informations dois-je inclure dans ma demande de projet ?</h3>
+                                <p className="text-[#060d0e]/70">Veuillez inclure vos objectifs de projet, le délai, la fourchette budgétaire et toutes les fonctionnalités spécifiques dont vous avez besoin. Plus vous fournissez de détails, mieux je peux comprendre vos besoins.</p>
                             </div>
 
                             <div className="bg-[#060d0e]/5 rounded-2xl p-6">
-                                <h3 className="font-semibold mb-2">Do you provide ongoing support after project completion?</h3>
-                                <p className="text-[#060d0e]/70">Yes! I offer various support and maintenance packages to keep your website updated, secure, and performing optimally.</p>
+                                <h3 className="font-semibold mb-2">Fournissez-vous un support continu après la fin du projet ?</h3>
+                                <p className="text-[#060d0e]/70">Oui ! J'offre divers packages de support et de maintenance pour garder votre site web à jour, sécurisé et performant de manière optimale.</p>
                             </div>
                         </div>
                     </div>
