@@ -61,19 +61,21 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     try {
       console.log('📤 Sending to Formspree from modal...');
       
-      // Create FormData manually for better control
-      const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('subject', formData.subject);
-      formDataToSend.append('message', formData.message);
-
+      // Send as JSON instead of FormData for better compatibility
       const response = await fetch('https://formspree.io/f/mvgqvkyp', {
         method: 'POST',
-        body: formDataToSend,
         headers: {
-          'Accept': 'application/json'
-        }
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `[Portfolio] ${formData.subject} - ${formData.name}`
+        })
       });
 
       console.log('📨 Modal response received:', {

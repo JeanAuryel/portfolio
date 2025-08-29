@@ -44,13 +44,6 @@ const Contact = () => {
         try {
             console.log('📤 Sending to Formspree (Free plan approach)...');
             
-            // Create FormData manually for better control
-            const formDataToSend = new FormData();
-            formDataToSend.append('name', formData.name);
-            formDataToSend.append('email', formData.email);
-            formDataToSend.append('subject', formData.subject);
-            formDataToSend.append('message', formData.message);
-            
             // Log what we're sending
             console.log('📦 Sending data:', {
                 name: formData.name,
@@ -59,12 +52,21 @@ const Contact = () => {
                 message: formData.message.substring(0, 50) + '...'
             });
 
+            // Send as JSON for better compatibility
             const response = await fetch('https://formspree.io/f/mvgqvkyp', {
                 method: 'POST',
-                body: formDataToSend,
                 headers: {
-                    'Accept': 'application/json'
-                }
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    _replyto: formData.email,
+                    _subject: `[Portfolio] ${formData.subject} - ${formData.name}`
+                })
             });
 
             console.log('📨 Response received:', {
