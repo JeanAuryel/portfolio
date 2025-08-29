@@ -5,62 +5,31 @@
 
 import { ButtonPrimary } from "../components/Button";
 import { useLanguage } from "../contexts/LanguageContext";
-import translations from "../translations";
+import { projectsData } from "../data/projects";
 
 
 const Work = () => {
     const { t, language } = useLanguage();
     
-    const projects = [
-      {
-        id: 1,
-        imgSrc: '/images/project-1.jpg',
-        title: t('work.detailedProjects.musify.title'),
-        description: t('work.detailedProjects.musify.description'),
-        longDescription: t('work.detailedProjects.musify.longDescription'),
-        tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Socket.io', 'JWT'],
-        projectLink: 'https://musify-5al0.onrender.com/',
-        githubLink: 'https://github.com/jeanauryel/musify',
-        features: translations[language].work.detailedProjects.musify.features,
+    const projects = projectsData.map(project => ({
+        id: project.id,
+        imgSrc: project.imgSrc || '/images/default-project.jpg',
+        title: project.name,
+        description: project.description,
+        longDescription: project.longDescription,
+        tags: [
+            ...(project.techStack.frontend || []).slice(0, 2),
+            ...(project.techStack.backend || []).slice(0, 2)
+        ],
+        projectLink: project.demoLink || '',
+        githubLink: project.githubLink || '',
+        features: project.features,
         techStack: {
-          frontend: ['React', 'TypeScript', 'Tailwind CSS', 'Context API'],
-          backend: ['Node.js', 'Express.js', 'MongoDB', 'JWT'],
-          tools: ['Git', 'Docker', 'Render', 'Figma']
+            frontend: project.techStack.frontend || [],
+            backend: project.techStack.backend || [],
+            tools: project.techStack.tools || []
         }
-      },
-      {
-        id: 2,
-        imgSrc: '/images/project-2.jpg',
-        title: t('work.detailedProjects.pixstock.title'),
-        description: t('work.detailedProjects.pixstock.description'),
-        longDescription: t('work.detailedProjects.pixstock.longDescription'),
-        tags: ['React', 'API Integration', 'Responsive Design', 'SPA'],
-        projectLink: 'https://pixstock-official.vercel.app/',
-        githubLink: 'https://github.com/jeanauryel/pixstock',
-        features: translations[language].work.detailedProjects.pixstock.features,
-        techStack: {
-          frontend: ['React', 'JavaScript', 'CSS3', 'Unsplash API'],
-          backend: ['API Integration'],
-          tools: ['Vite', 'Vercel', 'Git']
-        }
-      },
-      {
-        id: 3,
-        imgSrc: '/images/project-3.jpg',
-        title: t('work.detailedProjects.recipehub.title'),
-        description: t('work.detailedProjects.recipehub.description'),
-        longDescription: t('work.detailedProjects.recipehub.longDescription'),
-        tags: ['React', 'Recipe API', 'Local Storage', 'PWA'],
-        projectLink: '',
-        githubLink: 'https://github.com/jeanauryel/recipehub',
-        features: translations[language].work.detailedProjects.recipehub.features,
-        techStack: {
-          frontend: ['React', 'JavaScript', 'Material-UI'],
-          backend: ['Recipe API', 'Local Storage'],
-          tools: ['Webpack', 'Git', 'PWA Tools']
-        }
-      }
-    ];
+    }));
     
     return (
         <div className="section">

@@ -12,6 +12,9 @@ export interface Translations {
   };
   work: {
     title: string;
+    subtitle: string;
+    viewAllProjects: string;
+    seeDetailedProjects: string;
     detailedTitle: string;
     detailedSubtitle: string;
     projectsCompleted: string;
@@ -37,6 +40,24 @@ export interface Translations {
     readyToStartDesc: string;
     startProject: string;
     learnMoreAboutMe: string;
+    categories: {
+      fullstack: {
+        title: string;
+        description: string;
+      };
+      desktop: {
+        title: string;
+        description: string;
+      };
+      mobile: {
+        title: string;
+        description: string;
+      };
+      frontend: {
+        title: string;
+        description: string;
+      };
+    };
     projects: {
       musicApp: string;
       stockPhoto: string;
@@ -169,6 +190,9 @@ const translations: Record<'en' | 'fr', Translations> = {
     },
     work: {
       title: "My portfolio highlights",
+      subtitle: "Discover my projects organized by technology stack and platform",
+      viewAllProjects: "Want to see more details about each project?",
+      seeDetailedProjects: "View Detailed Projects",
       detailedTitle: "My Work & Projects",
       detailedSubtitle: "Showcasing real-world applications built with modern technologies",
       projectsCompleted: "15+ Projects Completed",
@@ -194,6 +218,24 @@ const translations: Record<'en' | 'fr', Translations> = {
       readyToStartDesc: "Let's discuss how we can bring your ideas to life with custom web solutions.",
       startProject: "Start a Project",
       learnMoreAboutMe: "Learn More About Me",
+      categories: {
+        fullstack: {
+          title: "Full Stack Applications",
+          description: "Complete web applications with modern frontend and robust backend architectures, featuring user authentication, database integration, and real-time functionality."
+        },
+        desktop: {
+          title: "Desktop Applications",
+          description: "Native desktop applications built with modern frameworks like Electron and Kotlin, offering powerful offline capabilities and system integration."
+        },
+        mobile: {
+          title: "Mobile Applications",
+          description: "Cross-platform mobile apps developed with React Native, connected to dedicated servers for seamless data synchronization and offline support."
+        },
+        frontend: {
+          title: "Frontend Websites",
+          description: "Modern, responsive websites and portfolios built with cutting-edge frontend technologies, optimized for performance and user experience."
+        }
+      },
       projects: {
         musicApp: "Full stack music app",
         stockPhoto: "Free stock photo app",
@@ -324,6 +366,9 @@ const translations: Record<'en' | 'fr', Translations> = {
     },
     work: {
       title: "Quelques Projets réalisés",
+      subtitle: "Découvrez mes projets organisés par stack technologique et plateforme",
+      viewAllProjects: "Envie de voir plus de détails sur chaque projet ?",
+      seeDetailedProjects: "Voir Projets Détaillés",
       detailedTitle: "Mes Projets & Réalisations",
       detailedSubtitle: "Présentation d'applications réelles construites avec des technologies modernes",
       projectsCompleted: "15+ Projets Réalisés",
@@ -349,6 +394,24 @@ const translations: Record<'en' | 'fr', Translations> = {
       readyToStartDesc: "Discutons de la façon dont nous pouvons donner vie à vos idées avec des solutions web personnalisées.",
       startProject: "Démarrer un Projet",
       learnMoreAboutMe: "En Savoir Plus Sur Moi",
+      categories: {
+        fullstack: {
+          title: "Applications Full Stack",
+          description: "Applications web complètes avec frontend moderne et architectures backend robustes, intégrant authentification utilisateur, base de données et fonctionnalités en temps réel."
+        },
+        desktop: {
+          title: "Applications Desktop",
+          description: "Applications desktop natives construites avec des frameworks modernes comme Electron et Kotlin, offrant de puissantes capacités hors ligne et intégration système."
+        },
+        mobile: {
+          title: "Applications Mobile",
+          description: "Applications mobiles cross-platform développées avec React Native, connectées à des serveurs dédiés pour une synchronisation de données fluide et support hors ligne."
+        },
+        frontend: {
+          title: "Sites Frontend",
+          description: "Sites web modernes et responsifs et portfolios construits avec des technologies frontend de pointe, optimisés pour la performance et l'expérience utilisateur."
+        }
+      },
       projects: {
         musicApp: "Application musicale full stack",
         stockPhoto: "Application de photos libres",

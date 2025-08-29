@@ -5,55 +5,13 @@
 
 import ProjectCard from "./ProjectCard";
 import { useLanguage } from "../contexts/LanguageContext";
+import { getProjectsByCategory } from "../data/projects";
 
 
 const Work = () => {
     const { t } = useLanguage();
 
-    const works = [
-        {
-            id: 'project-1',
-            imgSrc: '/images/project-1.jpg',
-            title: t('work.projects.musicApp'),
-            tags: ['API', 'MVC', 'Development'],
-            projectLink: 'https://musify-5al0.onrender.com/'
-        },
-        {
-            id: 'project-2',
-            imgSrc: '/images/project-2.jpg',
-            title: t('work.projects.stockPhoto'),
-            tags: ['API', 'SPA'],
-            projectLink: 'https://pixstock-official.vercel.app/'
-        },
-        {
-            id: 'project-3',
-            imgSrc: '/images/project-3.jpg',
-            title: t('work.projects.recipeApp'),
-            tags: ['Development', 'API'],
-            projectLink: null
-        },
-        {
-            id: 'project-4',
-            imgSrc: '/images/project-4.jpg',
-            title: t('work.projects.realEstate'),
-            tags: ['Web-design', 'Development'],
-            projectLink: 'https://github.com/codewithsadee-org/wealthome'
-        },
-        {
-            id: 'project-5',
-            imgSrc: '/images/project-5.jpg',
-            title: t('work.projects.eCommerce'),
-            tags: ['eCommerce', 'Development'],
-            projectLink: 'https://github.com/codewithsadee/anon-ecommerce-website'
-        },
-        {
-            id: 'project-6',
-            imgSrc: '/images/project-6.jpg',
-            title: t('work.projects.portfolio'),
-            tags: ['Web-design', 'Development'],
-            projectLink: 'https://github.com/codewithsadee/vcard-personal-portfolio'
-        },
-    ];
+    const categories = ['fullstack', 'desktop', 'mobile', 'frontend'];
 
     return (
 <section 
@@ -66,19 +24,37 @@ const Work = () => {
             {t('work.title')}
         </h2>
 
-        <div className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-4">
-            {
-                works.map(({id, imgSrc, title, tags, projectLink}) => (
-                    <ProjectCard 
-                        key={id}
-                        imgSrc={imgSrc}
-                        title={title}
-                        tags={tags}
-                        projectLink={projectLink}
-                    />
-                ))
-            }
-        </div>
+        {categories.map((category) => {
+            const categoryProjects = getProjectsByCategory(category);
+            if (categoryProjects.length === 0) return null;
+
+            return (
+                <div key={category} className="mb-12">
+                    <h3 className="headline-3 mb-6 text-center">
+                        {t(`work.categories.${category}.title`)}
+                    </h3>
+                    
+                    <p className="text-center text-[#060d0e]/70 mb-8 max-w-2xl mx-auto">
+                        {t(`work.categories.${category}.description`)}
+                    </p>
+                    
+                    <div className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-4 mb-8">
+                        {categoryProjects.map((project) => (
+                            <ProjectCard 
+                                key={project.id}
+                                imgSrc={project.imgSrc || '/images/default-project.jpg'}
+                                title={project.name}
+                                tags={[...Object.values(project.techStack).flat()].slice(0, 4)}
+                                projectLink={project.demoLink || project.githubLink}
+                                description={project.description}
+                                techStack={project.techStack}
+                                project={project}
+                            />
+                        ))}
+                    </div>
+                </div>
+            );
+        })}
 
     </div>
 </section>
