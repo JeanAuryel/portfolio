@@ -1,5 +1,5 @@
 /**
- * @copyright 2025 jeanauryel.dev
+ * @copyright 2025 jean-auryel.dev
  * @license Apache-2.0
  */
 
