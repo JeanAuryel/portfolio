@@ -45,7 +45,7 @@ const Work = () => {
                                 imgSrc={project.imgSrc || '/images/default-project.jpg'}
                                 title={project.name}
                                 tags={[...Object.values(project.techStack).flat()].slice(0, 4)}
-                                projectLink={project.demoLink || project.githubLink}
+                                projectLink={project.demoLink || project.githubLink || null}
                                 description={project.description}
                                 techStack={project.techStack}
                                 project={project}

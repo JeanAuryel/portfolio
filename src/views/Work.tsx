@@ -9,7 +9,7 @@ import { projectsData } from "../data/projects";
 
 
 const Work = () => {
-    const { t, language } = useLanguage();
+    const { t } = useLanguage();
     
     const projects = projectsData.map(project => ({
         id: project.id,
